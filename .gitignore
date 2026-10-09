@@ -1,0 +1,18 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.env
+
+# source statutes and derived artefacts: regenerate, don't commit
+data/raw/*
+data/interim/*
+!data/*/.gitkeep
+
+# the benchmark IS the contribution - it gets committed
+!data/benchmark/**
+
+# embedding indexes are large and rebuildable
+*.faiss
+*.index
