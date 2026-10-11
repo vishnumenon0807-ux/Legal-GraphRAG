@@ -27,8 +27,10 @@ interpreter, `PYTHONPATH`, pytest and ruff-on-save are already configured in
 ## Run
 
 ```powershell
-python scripts\run_pipeline.py     # XML -> clauses -> edges -> stats
-pytest                             # 15 regression tests on the extractor
+python scripts\run_pipeline.py        # stage 1: XML -> clauses -> edges -> stats
+python scripts\make_candidates.py     # stage 2: build the annotation worklist
+python scripts\validate_benchmark.py  # stage 2: check questions.jsonl
+pytest                                # 21 tests
 ```
 
 The Act XML is already in `data/raw/`. Everything under `data/raw/` and
@@ -47,7 +49,9 @@ src/legalgraph/
     references.py        STAGE 1  done  - typed cross-reference extraction
     stats.py             STAGE 1  done  - connectivity, hubs, multi-hop reach
   benchmark/
-    schema.py            STAGE 2  the Question record. Fix before writing q1.
+    schema.py            STAGE 2  the Question record
+    candidates.py        STAGE 2  rank + diversify edges into a worklist
+    validate.py          STAGE 2  schema + graph checks on questions.jsonl
   retrieval/
     bm25.py              STAGE 3  stub
     dense.py             STAGE 3  stub
@@ -89,9 +93,38 @@ What did not: multi-hop barely exists inside one Act (15 anchors), and the
 anaphora-resolution angle is 22 instances. Neither supports a contribution on
 this corpus alone.
 
-Open decision before stage 2: shrink the claim to one-hop reference-dependent
-retrieval, or widen the corpus to the Companies Rules 2014 and SEBI LODR, where
-cross-instrument references are. The question set depends on which.
+## Stage 2: the benchmark
+
+Scope decided: **one-hop reference-dependent retrieval over the Companies Act
+alone**. Questions whose answer needs a clause that flat retrieval will not
+surface, drawn from the 359 cross-section edges. Not multi-hop, because the Act
+only supports 15 such chains.
+
+Workflow:
+
+```powershell
+python scripts\make_candidates.py     # -> data/benchmark/candidates.md
+# work down the file writing questions into data/benchmark/questions.jsonl
+python scripts\validate_benchmark.py  # after every session
+```
+
+`candidates.md` ranks the 235 usable edges by how hard the target would be for
+a retriever that only sees the anchor: mostly lexical dissimilarity between the
+two clauses, plus target in-degree and the strength of the governing phrase. A
+per-target cap keeps the head of the list varied, since raw score puts nine
+s447 edges first and that would produce nine near-identical questions.
+
+`questions.jsonl` ships with 5 worked examples, verified against the clause
+text, so the format is unambiguous for a second annotator. Target ~200.
+
+Still needed for a publishable dataset: a second annotator on ~50 questions so
+inter-annotator agreement can be reported. That number is the first thing a
+reviewer checks to decide whether the labels are trustworthy.
+
+Deferred: widening to the Companies Rules 2014 and SEBI LODR, where genuine
+cross-instrument multi-hop structure lives. The schema, graph and metrics all
+survive that change, so nothing done now is wasted if it happens later. The
+clause ids would need the corpus prefix from `config.CORPORA` at that point.
 
 ## Known limitations
 
