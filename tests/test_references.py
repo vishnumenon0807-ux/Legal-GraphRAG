@@ -91,3 +91,45 @@ def test_ambiguous_internal_clause_is_flagged_not_guessed():
     edges = extract(nodes)
     assert edges[0]["kind"] == "int_clause_ambiguous"
     assert len(edges[0]["targets"]) == 3
+
+
+def test_named_code_is_not_an_internal_edge():
+    """'section 195 and Chapter XXVI of the Code of Criminal Procedure' must not
+    resolve to this Act's own s195. Named codes carry no 'Act, YYYY' for the
+    EXTERNAL pattern to catch, so they need the sentence-level check."""
+    nodes = [node("s424(4)", "424",
+                  "All proceedings shall be deemed judicial proceedings within the meaning "
+                  "of sections 193 and 228, and for the purposes of section 196 of the "
+                  "Indian Penal Code (45 of 1860), and the Tribunal shall be deemed a civil "
+                  "court for the purposes of section 195 and Chapter XXVI of the Code of "
+                  "Criminal Procedure, 1973 (2 of 1974)."),
+             node("s193", "193", "x", "section"), node("s195", "195", "x", "section"),
+             node("s196", "196", "x", "section"), node("s228", "228", "x", "section")]
+    edges = extract(nodes)
+    section_refs = [e for e in edges if e["kind"] in ("section", "subsec_sec")]
+    assert not section_refs, f"expected all demoted to cross_act, got {section_refs}"
+    assert all(e["resolved"] == [] for e in edges if e["kind"] == "cross_act")
+
+
+def test_bare_subsection_survives_a_nearby_code_mention():
+    """A bare 'sub-section (6)' is internal whatever else the sentence cites.
+    Over-correcting here would delete correct edges."""
+    nodes = [node("s212(7)", "212",
+                  "The limitation under sub-section (6) is in addition to the limitations "
+                  "under the Code of Criminal Procedure, 1973."),
+             node("s212(6)", "212", "x")]
+    edges = extract(nodes)
+    assert edges[0]["kind"] == "int_subsec"
+    assert edges[0]["resolved"] == ["s212(6)"]
+
+
+def test_repeated_subsection_in_a_list_is_section_qualified():
+    """'sub-section (2) or sub-section (2A) of section 167' repeats the word, so
+    the list must still bind to section 167 rather than falling back to internal."""
+    nodes = [node("s436(1)(b)", "436",
+                  "detained under sub-section (2) or sub-section (2A) of section 167 of "
+                  "the Code of Criminal Procedure, 1973."),
+             node("s436(2)", "436", "x"), node("s167", "167", "x", "section")]
+    edges = extract(nodes)
+    assert edges[0]["kind"] == "cross_act"
+    assert edges[0]["resolved"] == []

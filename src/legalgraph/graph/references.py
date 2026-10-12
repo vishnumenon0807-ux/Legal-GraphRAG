@@ -32,9 +32,9 @@ MASTER = re.compile(
     rf"""
     (?P<chain>clause\s*\((?P<ch_cl>{CL})\)\s*of\s*sub-?section\s*\((?P<ch_ss>{SUB})\)\s*of\s*section\s*(?P<ch_sec>{SEC}))
   | (?P<clause_sec>clause\s*\((?P<cs_cl>{CL})\)\s*of\s*section\s*(?P<cs_sec>{SEC}))
-  | (?P<subsec_sec>sub-?sections?\s*(?P<ss_list>\(\s*{SUB}\s*\)(?:\s*(?:,|and|or|to)\s*\(\s*{SUB}\s*\))*)\s*of\s*section\s*(?P<ss_sec>{SEC}))
+  | (?P<subsec_sec>sub-?sections?\s*(?P<ss_list>\(\s*{SUB}\s*\)(?:\s*(?:,|and|or|to)\s*(?:sub-?section\s*)?\(\s*{SUB}\s*\))*)\s*of\s*section\s*(?P<ss_sec>{SEC}))
   | (?P<section>sections?\s*(?P<sec_list>{SEC}(?:\s*(?:,|and|or|to)\s*{SEC})*))
-  | (?P<int_subsec>sub-?sections?\s*(?P<is_list>\(\s*{SUB}\s*\)(?:\s*(?:,|and|or|to)\s*\(\s*{SUB}\s*\))*))
+  | (?P<int_subsec>sub-?sections?\s*(?P<is_list>\(\s*{SUB}\s*\)(?:\s*(?:,|and|or|to)\s*(?:sub-?section\s*)?\(\s*{SUB}\s*\))*))
   | (?P<int_clause>clauses?\s*\((?P<ic_cl>{CL})\))
   | (?P<self_ref>this\s+(?P<sr_unit>sub-?section|section|clause|Chapter|Part))
   | (?P<anaphor>the\s+said\s+(?:sub-?section|section|clause)
@@ -57,6 +57,36 @@ EXTERNAL = re.compile(
     r"of\s+the\s+[^.;:]{0,80}?Act,\s*(\d{4})",
     re.IGNORECASE,
 )
+
+# Enactments cited by name rather than as "the X Act, YYYY". EXTERNAL cannot see
+# these, and they are cited in the same breath as this Act's own sections, so
+# "section 195 and Chapter XXVI of the Code of Criminal Procedure" was resolving
+# to the Companies Act's own s195 (insider trading). Wrong edges are worse than
+# missing ones: they put an unrelated clause into a gold set.
+NAMED_ENACTMENT = re.compile(
+    r"\b(?:Indian Penal Code"
+    r"|Code of (?:Criminal|Civil) Procedure"
+    r"|General Clauses Act"
+    r"|Constitution of India"
+    r"|(?:Indian )?Evidence Act"
+    r"|Limitation Act"
+    r"|Reserve Bank of India Act"
+    r"|Chartered Accountants Act)\b",
+    re.IGNORECASE,
+)
+
+# Reference kinds that name a section explicitly. Only these can be hijacked by
+# a trailing "of the <Code>": a bare "sub-section (4)" or "clause (b)" is always
+# internal to this Act, whatever else the sentence goes on to cite.
+SECTION_NAMING = {"section", "subsec_sec", "clause_sec", "chain"}
+
+
+def sentence_around(text: str, pos: int) -> str:
+    """The sentence containing offset `pos`. Sentence scope, not a fixed window:
+    the governing enactment can sit several clauses later in the sentence."""
+    start = max(text.rfind(". ", 0, pos), text.rfind("; ", 0, pos)) + 1
+    end = text.find(". ", pos)
+    return text[start if start > 0 else 0: end if end != -1 else len(text)]
 
 TRIGGERS = [
     "notwithstanding anything contained in",
@@ -132,6 +162,10 @@ def extract(nodes):
             targets = []
 
             if ext and kind in ("chain", "clause_sec", "subsec_sec", "section"):
+                kind = "cross_act"
+            elif kind in SECTION_NAMING and NAMED_ENACTMENT.search(
+                sentence_around(text, m.start())
+            ):
                 kind = "cross_act"
             elif kind == "chain":
                 targets = [f"s{m.group('ch_sec')}({m.group('ch_ss')})({m.group('ch_cl')})"]
