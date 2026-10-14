@@ -62,3 +62,27 @@ def test_shipped_seed_questions_are_valid():
     assert not errors
     assert questions
     assert not validate.check(questions, {n["id"] for n in nodes})
+
+
+def test_expansion_respects_a_fixed_budget():
+    """The ablation is only honest if expansion spends slots rather than adding
+    them. Expanding a full top-k list and truncating back to k is a no-op, which
+    is how the first version of the harness reported 'expansion does nothing'."""
+    from legalgraph.retrieval.expand import expand
+    graph = {"s1": {"s99"}}
+    base = [f"s{i}" for i in range(1, 11)]
+    assert expand(base, graph, depth=1)[:10] == base          # no room, no effect
+    assert "s99" in expand(base[:5], graph, depth=1)[:10]     # room, takes effect
+
+
+def test_reverse_edges_reach_the_referencing_section():
+    from legalgraph.retrieval import corpus
+    both = corpus.add_reverse({"s147": {"s139"}})
+    assert both["s139"] == {"s147"}
+    assert both["s147"] == {"s139"}
+
+
+def test_gold_clauses_map_to_their_section():
+    from legalgraph.retrieval import corpus
+    assert corpus.gold_sections(["s137(3)", "s164(1)(g)", "s447"]) == ["s137", "s164", "s447"]
+    assert corpus.section_id("s7(5)") == "s7"

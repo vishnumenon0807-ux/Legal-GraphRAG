@@ -1,6 +1,6 @@
 # Annotation worklist
 
-Top 120 of 235 cross-section reference edges, ranked by
+Top 120 of 228 cross-section reference edges, ranked by
 how hard the target would be for a retriever that only sees the anchor.
 
 For each one worth using, write a question whose natural answer needs BOTH
@@ -11,7 +11,7 @@ worse than a smaller dataset. Aim for roughly 200 kept.
 
 ## 1. s38(1) -> s447
 
-score 0.8403 | dissimilarity 0.9588 | target in-degree 14 | trigger `under`
+score 0.8403 | dissimilarity 0.9588 | target in-degree 13 | trigger `under`
 
 **Anchor s38(1)** (Punishment for personation for acquisition, etc., of securities.)
 
@@ -34,7 +34,7 @@ difficulty: one_hop
 
 ## 2. s137(3) -> s403
 
-score 0.7994 | dissimilarity 0.883 | target in-degree 13 | trigger `specified in`
+score 0.8173 | dissimilarity 0.883 | target in-degree 13 | trigger `specified in`
 
 **Anchor s137(3)** (Copy of financial statement to be filed with Registrar.)
 
@@ -57,7 +57,7 @@ difficulty: one_hop
 
 ## 3. s149(9) -> s198
 
-score 0.7642 | dissimilarity 0.9545 | target in-degree 4 | trigger `subject to the provisions of`
+score 0.7697 | dissimilarity 0.9545 | target in-degree 4 | trigger `subject to the provisions of`
 
 **Anchor s149(9)** (Company to have Board of Directors.)
 
@@ -78,32 +78,9 @@ difficulty: one_hop
 
 ---
 
-## 4. s183(1) -> s180
+## 4. s233(12) -> s230
 
-score 0.7307 | dissimilarity 0.9381 | target in-degree 1 | trigger `notwithstanding anything contained in`
-
-**Anchor s183(1)** (Power of Board and other persons to make contributions to national defence fund, etc.)
-
-> The Board of Directors of any company or any person or authority exercising the powers of the Board of Directors of a company, or of the company in general meeting, may, notwithstanding anything contained in sections 180, 181 and section 182 or any other provision of this Act or in the memorandum, a
-
-**Target s180** (Restriction on powers of Board.)
-
-> (1) The Board of Directors of a company shall exercise the following powers only with the consent of the company by a special resolution, namely:— (a) to sell, lease or otherwise dispose of the whole or substantially the whole of the undertaking of the company or where the company owns more than one
-
-```
-question:
-answer:
-gold_clauses: ["s183(1)", "s180"]
-anchor_clause: "s183(1)"
-reference_path: [["s183(1)", "s180"]]
-difficulty: one_hop
-```
-
----
-
-## 5. s233(12) -> s230
-
-score 0.7277 | dissimilarity 0.9593 | target in-degree 6 | trigger `referred to in`
+score 0.736 | dissimilarity 0.9593 | target in-degree 6 | trigger `referred to in`
 
 **Anchor s233(12)** (Merger or amalgamation of certain companies.)
 
@@ -124,9 +101,9 @@ difficulty: one_hop
 
 ---
 
-## 6. s66(3) -> s133
+## 5. s66(3) -> s133
 
-score 0.7225 | dissimilarity 0.9333 | target in-degree 7 | trigger `specified in`
+score 0.7321 | dissimilarity 0.9333 | target in-degree 7 | trigger `specified in`
 
 **Anchor s66(3)** (Reduction of share capital.)
 
@@ -147,9 +124,32 @@ difficulty: one_hop
 
 ---
 
+## 6. s183(1) -> s180
+
+score 0.7321 | dissimilarity 0.9381 | target in-degree 1 | trigger `notwithstanding anything contained in`
+
+**Anchor s183(1)** (Power of Board and other persons to make contributions to national defence fund, etc.)
+
+> The Board of Directors of any company or any person or authority exercising the powers of the Board of Directors of a company, or of the company in general meeting, may, notwithstanding anything contained in sections 180, 181 and section 182 or any other provision of this Act or in the memorandum, a
+
+**Target s180** (Restriction on powers of Board.)
+
+> (1) The Board of Directors of a company shall exercise the following powers only with the consent of the company by a special resolution, namely:— (a) to sell, lease or otherwise dispose of the whole or substantially the whole of the undertaking of the company or where the company owns more than one
+
+```
+question:
+answer:
+gold_clauses: ["s183(1)", "s180"]
+anchor_clause: "s183(1)"
+reference_path: [["s183(1)", "s180"]]
+difficulty: one_hop
+```
+
+---
+
 ## 7. s466(1) -> s465
 
-score 0.7224 | dissimilarity 0.8648 | target in-degree 3 | trigger `notwithstanding anything contained in`
+score 0.7265 | dissimilarity 0.8648 | target in-degree 3 | trigger `notwithstanding anything contained in`
 
 **Anchor s466(1)** (Dissolution of Company Law Board and consequential provisions.)
 
@@ -172,7 +172,7 @@ difficulty: one_hop
 
 ## 8. s196(4) -> s197
 
-score 0.719 | dissimilarity 0.8793 | target in-degree 4 | trigger `subject to the provisions of`
+score 0.7245 | dissimilarity 0.8793 | target in-degree 4 | trigger `subject to the provisions of`
 
 **Anchor s196(4)** (Appointment of managing director, whole-time director or manager.)
 
@@ -195,7 +195,7 @@ difficulty: one_hop
 
 ## 9. s149(10) -> s152
 
-score 0.7107 | dissimilarity 0.925 | target in-degree 2 | trigger `subject to the provisions of`
+score 0.7135 | dissimilarity 0.925 | target in-degree 2 | trigger `subject to the provisions of`
 
 **Anchor s149(10)** (Company to have Board of Directors.)
 
@@ -218,7 +218,7 @@ difficulty: one_hop
 
 ## 10. s183(1) -> s181
 
-score 0.7094 | dissimilarity 0.8727 | target in-degree 2 | trigger `notwithstanding anything contained in`
+score 0.7121 | dissimilarity 0.8727 | target in-degree 2 | trigger `notwithstanding anything contained in`
 
 **Anchor s183(1)** (Power of Board and other persons to make contributions to national defence fund, etc.)
 
@@ -241,7 +241,7 @@ difficulty: one_hop
 
 ## 11. s54(1) -> s53
 
-score 0.7012 | dissimilarity 0.8889 | target in-degree 1 | trigger `notwithstanding anything contained in`
+score 0.7026 | dissimilarity 0.8889 | target in-degree 1 | trigger `notwithstanding anything contained in`
 
 **Anchor s54(1)** (Issue of sweat equity shares.)
 
@@ -264,7 +264,7 @@ difficulty: one_hop
 
 ## 12. s147(1) -> s139
 
-score 0.6839 | dissimilarity 0.966 | target in-degree 5 | trigger `none`
+score 0.6908 | dissimilarity 0.966 | target in-degree 5 | trigger `none`
 
 **Anchor s147(1)** (Punishment for contravention.)
 
@@ -287,7 +287,7 @@ difficulty: one_hop
 
 ## 13. s230(10) -> s68
 
-score 0.6836 | dissimilarity 0.9655 | target in-degree 5 | trigger `none`
+score 0.6905 | dissimilarity 0.9655 | target in-degree 5 | trigger `none`
 
 **Anchor s230(10)** (Power to compromise or make arrangements with creditors and members.)
 
@@ -310,7 +310,7 @@ difficulty: one_hop
 
 ## 14. s233(5) -> s232
 
-score 0.6762 | dissimilarity 0.9532 | target in-degree 5 | trigger `under`
+score 0.6831 | dissimilarity 0.9532 | target in-degree 5 | trigger `under`
 
 **Anchor s233(5)** (Merger or amalgamation of certain companies.)
 
@@ -331,32 +331,9 @@ difficulty: one_hop
 
 ---
 
-## 15. s13(2) -> s4(2)
+## 15. s249(1) -> s248(2)
 
-score 0.6754 | dissimilarity 0.8958 | target in-degree 1 | trigger `subject to the provisions of`
-
-**Anchor s13(2)** (Alteration of memorandum.)
-
-> Any change in the name of a company shall be subject to the provisions of subsections (2) and (3) of section 4 and shall not have effect except with the approval of the Central Government in writing: Provided that no such approval shall be necessary where the only change in the name of the company i
-
-**Target s4(2)** (Memorandum.)
-
-> The name stated in the memorandum shall not— (a) be identical with or resemble too nearly to the name of an existing company registered under this Act or any previous company law; or (b) be such that its use by the company— (i) will constitute an offence under any law for the time being in force; or
-
-```
-question:
-answer:
-gold_clauses: ["s13(2)", "s4(2)"]
-anchor_clause: "s13(2)"
-reference_path: [["s13(2)", "s4(2)"]]
-difficulty: one_hop
-```
-
----
-
-## 16. s249(1) -> s248(2)
-
-score 0.6749 | dissimilarity 0.951 | target in-degree 5 | trigger `under`
+score 0.6817 | dissimilarity 0.951 | target in-degree 5 | trigger `under`
 
 **Anchor s249(1)** (Restrictions on making application under section 248 in certain situations.)
 
@@ -377,9 +354,32 @@ difficulty: one_hop
 
 ---
 
+## 16. s13(2) -> s4(2)
+
+score 0.6767 | dissimilarity 0.8958 | target in-degree 1 | trigger `subject to the provisions of`
+
+**Anchor s13(2)** (Alteration of memorandum.)
+
+> Any change in the name of a company shall be subject to the provisions of subsections (2) and (3) of section 4 and shall not have effect except with the approval of the Central Government in writing: Provided that no such approval shall be necessary where the only change in the name of the company i
+
+**Target s4(2)** (Memorandum.)
+
+> The name stated in the memorandum shall not— (a) be identical with or resemble too nearly to the name of an existing company registered under this Act or any previous company law; or (b) be such that its use by the company— (i) will constitute an offence under any law for the time being in force; or
+
+```
+question:
+answer:
+gold_clauses: ["s13(2)", "s4(2)"]
+anchor_clause: "s13(2)"
+reference_path: [["s13(2)", "s4(2)"]]
+difficulty: one_hop
+```
+
+---
+
 ## 17. s42(1) -> s26
 
-score 0.6709 | dissimilarity 0.9741 | target in-degree 4 | trigger `none`
+score 0.6764 | dissimilarity 0.9741 | target in-degree 4 | trigger `none`
 
 **Anchor s42(1)** (Offer or invitation for subscription of securities on private placement.)
 
@@ -402,7 +402,7 @@ difficulty: one_hop
 
 ## 18. s224(2) -> s213
 
-score 0.6688 | dissimilarity 0.9206 | target in-degree 4 | trigger `referred to in`
+score 0.6743 | dissimilarity 0.9206 | target in-degree 4 | trigger `referred to in`
 
 **Anchor s224(2)** (Actions to be taken in pursuance of inspector’s report.)
 
@@ -425,7 +425,7 @@ difficulty: one_hop
 
 ## 19. s177(8) -> s134(3)
 
-score 0.6659 | dissimilarity 0.9658 | target in-degree 4 | trigger `under`
+score 0.6714 | dissimilarity 0.9658 | target in-degree 4 | trigger `under`
 
 **Anchor s177(8)** (Audit Committee.)
 
@@ -446,32 +446,9 @@ difficulty: one_hop
 
 ---
 
-## 20. s327(1) -> s326
+## 20. s70(2) -> s92
 
-score 0.662 | dissimilarity 0.8141 | target in-degree 3 | trigger `subject to the provisions of`
-
-**Anchor s327(1)** (Preferential payments.)
-
-> In a winding up, subject to the provisions of section 326, there shall be paid in priority to all other debts,— (a) all revenues, taxes, cesses and rates due from the company to the Central Government or a State Government or to a local authority at the relevant date, and having become due and payab
-
-**Target s326** (Overriding preferential payments.)
-
-> (1) Notwithstanding anything contained in this Act or any other law for the time being in force, in the winding up of a company,— (a) workmen’s dues; and (b) debts due to secured creditors to the extent such debts rank under clause (iii) of the proviso to subsection (1) of section 325 pari passu wit
-
-```
-question:
-answer:
-gold_clauses: ["s327(1)", "s326"]
-anchor_clause: "s327(1)"
-reference_path: [["s327(1)", "s326"]]
-difficulty: one_hop
-```
-
----
-
-## 21. s70(2) -> s92
-
-score 0.6607 | dissimilarity 0.9571 | target in-degree 4 | trigger `none`
+score 0.6662 | dissimilarity 0.9571 | target in-degree 4 | trigger `none`
 
 **Anchor s70(2)** (Prohibition for buy-back in certain circumstances.)
 
@@ -492,101 +469,32 @@ difficulty: one_hop
 
 ---
 
-## 22. s76(1) -> s73
+## 21. s327(1) -> s326
 
-score 0.655 | dissimilarity 0.7821 | target in-degree 2 | trigger `notwithstanding anything contained in`
+score 0.6662 | dissimilarity 0.8141 | target in-degree 3 | trigger `subject to the provisions of`
 
-**Anchor s76(1)** (Acceptance of deposits from public by certain companies.)
+**Anchor s327(1)** (Preferential payments.)
 
-> Notwithstanding anything contained in section 73, a public company, having such net worth or turnover as may be prescribed, may accept deposits from persons other than its members subject to compliance with the requirements provided in sub-section (2) of section 73 and subject to such rules as the C
+> In a winding up, subject to the provisions of section 326, there shall be paid in priority to all other debts,— (a) all revenues, taxes, cesses and rates due from the company to the Central Government or a State Government or to a local authority at the relevant date, and having become due and payab
 
-**Target s73** (Prohibition on acceptance of deposits from public.)
+**Target s326** (Overriding preferential payments.)
 
-> (1) On and after the commencement of this Act, no company shall invite, accept or renew deposits under this Act from the public except in a manner provided under this Chapter: Provided that nothing in this sub-section shall apply to a banking company and nonbanking financial company as defined in th
+> (1) Notwithstanding anything contained in this Act or any other law for the time being in force, in the winding up of a company,— (a) workmen’s dues; and (b) debts due to secured creditors to the extent such debts rank under clause (iii) of the proviso to subsection (1) of section 325 pari passu wit
 
 ```
 question:
 answer:
-gold_clauses: ["s76(1)", "s73"]
-anchor_clause: "s76(1)"
-reference_path: [["s76(1)", "s73"]]
+gold_clauses: ["s327(1)", "s326"]
+anchor_clause: "s327(1)"
+reference_path: [["s327(1)", "s326"]]
 difficulty: one_hop
 ```
 
 ---
 
-## 23. s218(1)(a) -> s212
+## 22. s218(1)(a) -> s210
 
-score 0.655 | dissimilarity 0.9774 | target in-degree 3 | trigger `none`
-
-**Anchor s218(1)(a)** (Protection of employees during investigation.)
-
-> during the course of any investigation of the affairs and other matters of or relating to a company, other body corporate or person under section 210, section 212, section 213 or section 219 or of the membership and other matters of or relating to a company, or the ownership of shares in or debentur
-
-**Target s212** (Investigation into affairs of Company by Serious Fraud Investigation Office.)
-
-> (1) Without prejudice to the provisions of section 210, where the Central Government is of the opinion, that it is necessary to investigate into the affairs of a company by the Serious Fraud Investigation Office— (a) on receipt of a report of the Registrar or inspector under section 208; (b) on inti
-
-```
-question:
-answer:
-gold_clauses: ["s218(1)(a)", "s212"]
-anchor_clause: "s218(1)(a)"
-reference_path: [["s218(1)(a)", "s212"]]
-difficulty: one_hop
-```
-
----
-
-## 24. s424(4) -> s195
-
-score 0.6543 | dissimilarity 0.981 | target in-degree 2 | trigger `for the purposes of`
-
-**Anchor s424(4)** (Procedure before Tribunal and Appellate Tribunal.)
-
-> All proceedings before the Tribunal or the Appellate Tribunal shall be deemed to be judicial proceedings within the meaning of sections 193 and 228, and for the purposes of section 196 of the Indian Penal Code (45 of 1860), and the Tribunal and the Appellate Tribunal shall be deemed to be civil cour
-
-**Target s195** (Prohibition on insider trading of securities.)
-
-> (1) No person including any director or key managerial personnel of a company shall enter into insider trading: Provided that nothing contained in this sub-section shall apply to any communication required in the ordinary course of business or profession or employment or under any law. Explanation.—
-
-```
-question:
-answer:
-gold_clauses: ["s424(4)", "s195"]
-anchor_clause: "s424(4)"
-reference_path: [["s424(4)", "s195"]]
-difficulty: one_hop
-```
-
----
-
-## 25. s13(2) -> s4(3)
-
-score 0.6536 | dissimilarity 0.8596 | target in-degree 1 | trigger `subject to the provisions of`
-
-**Anchor s13(2)** (Alteration of memorandum.)
-
-> Any change in the name of a company shall be subject to the provisions of subsections (2) and (3) of section 4 and shall not have effect except with the approval of the Central Government in writing: Provided that no such approval shall be necessary where the only change in the name of the company i
-
-**Target s4(3)** (Memorandum.)
-
-> Without prejudice to the provisions of sub-section (2), a company shall not be registered with a name which contains— (a) any word or expression which is likely to give the impression that the company is in any way connected with, or having the patronage of, the Central Government, any State Governm
-
-```
-question:
-answer:
-gold_clauses: ["s13(2)", "s4(3)"]
-anchor_clause: "s13(2)"
-reference_path: [["s13(2)", "s4(3)"]]
-difficulty: one_hop
-```
-
----
-
-## 26. s218(1)(a) -> s210
-
-score 0.6532 | dissimilarity 0.9149 | target in-degree 5 | trigger `under`
+score 0.6601 | dissimilarity 0.9149 | target in-degree 5 | trigger `under`
 
 **Anchor s218(1)(a)** (Protection of employees during investigation.)
 
@@ -607,9 +515,78 @@ difficulty: one_hop
 
 ---
 
-## 27. s47(1) -> s43
+## 23. s218(1)(a) -> s212
 
-score 0.6531 | dissimilarity 0.8587 | target in-degree 1 | trigger `subject to the provisions of`
+score 0.6591 | dissimilarity 0.9774 | target in-degree 3 | trigger `none`
+
+**Anchor s218(1)(a)** (Protection of employees during investigation.)
+
+> during the course of any investigation of the affairs and other matters of or relating to a company, other body corporate or person under section 210, section 212, section 213 or section 219 or of the membership and other matters of or relating to a company, or the ownership of shares in or debentur
+
+**Target s212** (Investigation into affairs of Company by Serious Fraud Investigation Office.)
+
+> (1) Without prejudice to the provisions of section 210, where the Central Government is of the opinion, that it is necessary to investigate into the affairs of a company by the Serious Fraud Investigation Office— (a) on receipt of a report of the Registrar or inspector under section 208; (b) on inti
+
+```
+question:
+answer:
+gold_clauses: ["s218(1)(a)", "s212"]
+anchor_clause: "s218(1)(a)"
+reference_path: [["s218(1)(a)", "s212"]]
+difficulty: one_hop
+```
+
+---
+
+## 24. s76(1) -> s73
+
+score 0.6577 | dissimilarity 0.7821 | target in-degree 2 | trigger `notwithstanding anything contained in`
+
+**Anchor s76(1)** (Acceptance of deposits from public by certain companies.)
+
+> Notwithstanding anything contained in section 73, a public company, having such net worth or turnover as may be prescribed, may accept deposits from persons other than its members subject to compliance with the requirements provided in sub-section (2) of section 73 and subject to such rules as the C
+
+**Target s73** (Prohibition on acceptance of deposits from public.)
+
+> (1) On and after the commencement of this Act, no company shall invite, accept or renew deposits under this Act from the public except in a manner provided under this Chapter: Provided that nothing in this sub-section shall apply to a banking company and nonbanking financial company as defined in th
+
+```
+question:
+answer:
+gold_clauses: ["s76(1)", "s73"]
+anchor_clause: "s76(1)"
+reference_path: [["s76(1)", "s73"]]
+difficulty: one_hop
+```
+
+---
+
+## 25. s13(2) -> s4(3)
+
+score 0.655 | dissimilarity 0.8596 | target in-degree 1 | trigger `subject to the provisions of`
+
+**Anchor s13(2)** (Alteration of memorandum.)
+
+> Any change in the name of a company shall be subject to the provisions of subsections (2) and (3) of section 4 and shall not have effect except with the approval of the Central Government in writing: Provided that no such approval shall be necessary where the only change in the name of the company i
+
+**Target s4(3)** (Memorandum.)
+
+> Without prejudice to the provisions of sub-section (2), a company shall not be registered with a name which contains— (a) any word or expression which is likely to give the impression that the company is in any way connected with, or having the patronage of, the Central Government, any State Governm
+
+```
+question:
+answer:
+gold_clauses: ["s13(2)", "s4(3)"]
+anchor_clause: "s13(2)"
+reference_path: [["s13(2)", "s4(3)"]]
+difficulty: one_hop
+```
+
+---
+
+## 26. s47(1) -> s43
+
+score 0.6544 | dissimilarity 0.8587 | target in-degree 1 | trigger `subject to the provisions of`
 
 **Anchor s47(1)** (Voting rights.)
 
@@ -630,9 +607,9 @@ difficulty: one_hop
 
 ---
 
-## 28. s70(2) -> s129
+## 27. s70(2) -> s129
 
-score 0.6488 | dissimilarity 0.967 | target in-degree 3 | trigger `none`
+score 0.6529 | dissimilarity 0.967 | target in-degree 3 | trigger `none`
 
 **Anchor s70(2)** (Prohibition for buy-back in certain circumstances.)
 
@@ -653,9 +630,9 @@ difficulty: one_hop
 
 ---
 
-## 29. s371(6) -> s242
+## 28. s371(6) -> s242
 
-score 0.6458 | dissimilarity 0.9621 | target in-degree 3 | trigger `none`
+score 0.6499 | dissimilarity 0.9621 | target in-degree 3 | trigger `none`
 
 **Anchor s371(6)** (Effect of registration under this Part.)
 
@@ -676,9 +653,9 @@ difficulty: one_hop
 
 ---
 
-## 30. s147(1) -> s144
+## 29. s147(1) -> s144
 
-score 0.645 | dissimilarity 0.9608 | target in-degree 3 | trigger `none`
+score 0.6492 | dissimilarity 0.9608 | target in-degree 3 | trigger `none`
 
 **Anchor s147(1)** (Punishment for contravention.)
 
@@ -699,9 +676,9 @@ difficulty: one_hop
 
 ---
 
-## 31. s147(1) -> s143
+## 30. s147(1) -> s143
 
-score 0.6424 | dissimilarity 0.9564 | target in-degree 3 | trigger `none`
+score 0.6465 | dissimilarity 0.9564 | target in-degree 3 | trigger `none`
 
 **Anchor s147(1)** (Punishment for contravention.)
 
@@ -722,9 +699,9 @@ difficulty: one_hop
 
 ---
 
-## 32. s254(1) -> s13(4)
+## 31. s254(1) -> s13(4)
 
-score 0.642 | dissimilarity 0.9855 | target in-degree 2 | trigger `under`
+score 0.6448 | dissimilarity 0.9855 | target in-degree 2 | trigger `under`
 
 **Anchor s254(1)** (Application for revival and rehabilitation.)
 
@@ -745,9 +722,9 @@ difficulty: one_hop
 
 ---
 
-## 33. s391(1) -> s36
+## 32. s391(1) -> s36
 
-score 0.641 | dissimilarity 0.9839 | target in-degree 2 | trigger `none`
+score 0.6438 | dissimilarity 0.9839 | target in-degree 2 | trigger `none`
 
 **Anchor s391(1)** (Application of sections 34 to 36 and Chapter XX.)
 
@@ -768,9 +745,9 @@ difficulty: one_hop
 
 ---
 
-## 34. s123(6) -> s74
+## 33. s123(6) -> s74
 
-score 0.6382 | dissimilarity 0.9792 | target in-degree 2 | trigger `none`
+score 0.641 | dissimilarity 0.9792 | target in-degree 2 | trigger `none`
 
 **Anchor s123(6)** (Declaration of dividend.)
 
@@ -791,32 +768,9 @@ difficulty: one_hop
 
 ---
 
-## 35. s164(1)(g) -> s188
+## 34. s150(1) -> s149(6)
 
-score 0.6337 | dissimilarity 0.9716 | target in-degree 2 | trigger `under`
-
-**Anchor s164(1)(g)** (Disqualifications for appointment of director.)
-
-> he has been convicted of the offence dealing with related party transactions under section 188 at any time during the last preceding five years; or
-
-**Target s188** (Related party transactions.)
-
-> (1) Except with the consent of the Board of Directors given by a resolution at a meeting of the Board and subject to such conditions as may be prescribed, no company shall enter into any contract or arrangement with a related party with respect to— (a) sale, purchase or supply of any goods or materi
-
-```
-question:
-answer:
-gold_clauses: ["s164(1)(g)", "s188"]
-anchor_clause: "s164(1)(g)"
-reference_path: [["s164(1)(g)", "s188"]]
-difficulty: one_hop
-```
-
----
-
-## 36. s150(1) -> s149(6)
-
-score 0.633 | dissimilarity 0.9407 | target in-degree 3 | trigger `none`
+score 0.6371 | dissimilarity 0.9407 | target in-degree 3 | trigger `none`
 
 **Anchor s150(1)** (Manner of selection of independent directors and maintenance of databank of independent directors.)
 
@@ -837,9 +791,32 @@ difficulty: one_hop
 
 ---
 
-## 37. s70(2) -> s127
+## 35. s164(1)(g) -> s188
 
-score 0.629 | dissimilarity 0.9639 | target in-degree 2 | trigger `none`
+score 0.6364 | dissimilarity 0.9716 | target in-degree 2 | trigger `under`
+
+**Anchor s164(1)(g)** (Disqualifications for appointment of director.)
+
+> he has been convicted of the offence dealing with related party transactions under section 188 at any time during the last preceding five years; or
+
+**Target s188** (Related party transactions.)
+
+> (1) Except with the consent of the Board of Directors given by a resolution at a meeting of the Board and subject to such conditions as may be prescribed, no company shall enter into any contract or arrangement with a related party with respect to— (a) sale, purchase or supply of any goods or materi
+
+```
+question:
+answer:
+gold_clauses: ["s164(1)(g)", "s188"]
+anchor_clause: "s164(1)(g)"
+reference_path: [["s164(1)(g)", "s188"]]
+difficulty: one_hop
+```
+
+---
+
+## 36. s70(2) -> s127
+
+score 0.6318 | dissimilarity 0.9639 | target in-degree 2 | trigger `none`
 
 **Anchor s70(2)** (Prohibition for buy-back in certain circumstances.)
 
@@ -860,32 +837,9 @@ difficulty: one_hop
 
 ---
 
-## 38. s348(5) -> s182
+## 37. s147(1) -> s145
 
-score 0.6282 | dissimilarity 0.9624 | target in-degree 2 | trigger `under`
-
-**Anchor s348(5)** (Information as to pending liquidations.)
-
-> Any person fraudulently stating himself to be a creditor or contributory under subsection (4) shall be deemed to be guilty of an offence under section 182 of the Indian Penal Code (45 of 1860), and shall, on the application of the Company Liquidator, be punishable accordingly.
-
-**Target s182** (Prohibitions and restrictions regarding political contributions.)
-
-> (1) Notwithstanding anything contained in any other provision of this Act, a company, other than a Government company and a company which has been in existence for less than three financial years, may contribute any amount directly or indirectly to any political party: Provided that the amount refer
-
-```
-question:
-answer:
-gold_clauses: ["s348(5)", "s182"]
-anchor_clause: "s348(5)"
-reference_path: [["s348(5)", "s182"]]
-difficulty: one_hop
-```
-
----
-
-## 39. s147(1) -> s145
-
-score 0.6267 | dissimilarity 0.96 | target in-degree 2 | trigger `none`
+score 0.6295 | dissimilarity 0.96 | target in-degree 2 | trigger `none`
 
 **Anchor s147(1)** (Punishment for contravention.)
 
@@ -906,32 +860,9 @@ difficulty: one_hop
 
 ---
 
-## 40. s2(70) -> s31
+## 38. s70(2) -> s123
 
-score 0.6257 | dissimilarity 0.9381 | target in-degree 1 | trigger `referred to in`
-
-**Anchor s2(70)** (Definitions.)
-
-> “prospectus” means any document described or issued as a prospectus and includes a red herring prospectus referred to in section 32 or shelf prospectus referred to in section 31 or any notice, circular, advertisement or other document inviting offers from the public for the subscription or purchase 
-
-**Target s31** (Shelf prospectus.)
-
-> (1) Any class or classes of companies, as the Securities and Exchange Board may provide by regulations in this behalf, may file a shelf prospectus with the Registrar at the stage of the first offer of securities included therein which shall indicate a period not exceeding one year as the period of v
-
-```
-question:
-answer:
-gold_clauses: ["s2(70)", "s31"]
-anchor_clause: "s2(70)"
-reference_path: [["s2(70)", "s31"]]
-difficulty: one_hop
-```
-
----
-
-## 41. s70(2) -> s123
-
-score 0.6244 | dissimilarity 0.9562 | target in-degree 2 | trigger `none`
+score 0.6272 | dissimilarity 0.9562 | target in-degree 2 | trigger `none`
 
 **Anchor s70(2)** (Prohibition for buy-back in certain circumstances.)
 
@@ -952,9 +883,32 @@ difficulty: one_hop
 
 ---
 
-## 42. s139(11) -> s177
+## 39. s2(70) -> s31
 
-score 0.6237 | dissimilarity 0.9551 | target in-degree 2 | trigger `under`
+score 0.6271 | dissimilarity 0.9381 | target in-degree 1 | trigger `referred to in`
+
+**Anchor s2(70)** (Definitions.)
+
+> “prospectus” means any document described or issued as a prospectus and includes a red herring prospectus referred to in section 32 or shelf prospectus referred to in section 31 or any notice, circular, advertisement or other document inviting offers from the public for the subscription or purchase 
+
+**Target s31** (Shelf prospectus.)
+
+> (1) Any class or classes of companies, as the Securities and Exchange Board may provide by regulations in this behalf, may file a shelf prospectus with the Registrar at the stage of the first offer of securities included therein which shall indicate a period not exceeding one year as the period of v
+
+```
+question:
+answer:
+gold_clauses: ["s2(70)", "s31"]
+anchor_clause: "s2(70)"
+reference_path: [["s2(70)", "s31"]]
+difficulty: one_hop
+```
+
+---
+
+## 40. s139(11) -> s177
+
+score 0.6265 | dissimilarity 0.9551 | target in-degree 2 | trigger `under`
 
 **Anchor s139(11)** (Appointment of auditors.)
 
@@ -975,101 +929,9 @@ difficulty: one_hop
 
 ---
 
-## 43. s436(1)(c) -> s167
+## 41. s111(1) -> s100
 
-score 0.6224 | dissimilarity 0.9528 | target in-degree 2 | trigger `under`
-
-**Anchor s436(1)(c)** (Offences triable by Special Courts.)
-
-> the Special Court may exercise, in relation to the person forwarded to it under clause (b), the same power which a Magistrate having jurisdiction to try a case may exercise under section 167 of the Code of Criminal Procedure, 1973 (2 of 1974) in relation to an accused person who has been forwarded t
-
-**Target s167** (Vacation of office of director.)
-
-> (1) The office of a director shall become vacant in case— (a) he incurs any of the disqualifications specified in section 164; (b) he absents himself from all the meetings of the Board of Directors held during a period of twelve months with or without seeking leave of absence of the Board; (c) he ac
-
-```
-question:
-answer:
-gold_clauses: ["s436(1)(c)", "s167"]
-anchor_clause: "s436(1)(c)"
-reference_path: [["s436(1)(c)", "s167"]]
-difficulty: one_hop
-```
-
----
-
-## 44. s254(1) -> s5(1)
-
-score 0.6221 | dissimilarity 0.9821 | target in-degree 1 | trigger `under`
-
-**Anchor s254(1)** (Application for revival and rehabilitation.)
-
-> On the determination of a company as a sick company by the Tribunal under section 253, any secured creditor of that company or the company may make an application to the Tribunal for the determination of the measures that may be adopted with respect to the revival and rehabilitation of such company:
-
-**Target s5(1)** (Articles.)
-
-> The articles of a company shall contain the regulations for management of the company.
-
-```
-question:
-answer:
-gold_clauses: ["s254(1)", "s5(1)"]
-anchor_clause: "s254(1)"
-reference_path: [["s254(1)", "s5(1)"]]
-difficulty: one_hop
-```
-
----
-
-## 45. s424(4) -> s196
-
-score 0.622 | dissimilarity 0.9569 | target in-degree 1 | trigger `for the purposes of`
-
-**Anchor s424(4)** (Procedure before Tribunal and Appellate Tribunal.)
-
-> All proceedings before the Tribunal or the Appellate Tribunal shall be deemed to be judicial proceedings within the meaning of sections 193 and 228, and for the purposes of section 196 of the Indian Penal Code (45 of 1860), and the Tribunal and the Appellate Tribunal shall be deemed to be civil cour
-
-**Target s196** (Appointment of managing director, whole-time director or manager.)
-
-> (1) No company shall appoint or employ at the same time a managing director and a manager. (2) No company shall appoint or re-appoint any person as its managing director, whole-time director or manager for a term exceeding five years at a time: Provided that no re-appointment shall be made earlier t
-
-```
-question:
-answer:
-gold_clauses: ["s424(4)", "s196"]
-anchor_clause: "s424(4)"
-reference_path: [["s424(4)", "s196"]]
-difficulty: one_hop
-```
-
----
-
-## 46. s147(1) -> s142
-
-score 0.6215 | dissimilarity 0.9811 | target in-degree 1 | trigger `none`
-
-**Anchor s147(1)** (Punishment for contravention.)
-
-> If any of the provisions of sections 139 to 146 (both inclusive) is contravened, the company shall be punishable with fine which shall not be less than twenty-five thousand rupees but which may extend to five lakh rupees and every officer of the company who is in default shall be punishable with imp
-
-**Target s142** (Remuneration of auditors.)
-
-> (1) The remuneration of the auditor of a company shall be fixed in its general meeting or in such manner as may be determined therein: Provided that the Board may fix remuneration of the first auditor appointed by it. (2) The remuneration under sub-section (1) shall, in addition to the fee payable t
-
-```
-question:
-answer:
-gold_clauses: ["s147(1)", "s142"]
-anchor_clause: "s147(1)"
-reference_path: [["s147(1)", "s142"]]
-difficulty: one_hop
-```
-
----
-
-## 47. s111(1) -> s100
-
-score 0.6214 | dissimilarity 0.9213 | target in-degree 3 | trigger `none`
+score 0.6255 | dissimilarity 0.9213 | target in-degree 3 | trigger `none`
 
 **Anchor s111(1)** (Circulation of members’ resolution.)
 
@@ -1090,9 +952,55 @@ difficulty: one_hop
 
 ---
 
-## 48. s147(1) -> s146
+## 42. s254(1) -> s5(1)
 
-score 0.6204 | dissimilarity 0.9792 | target in-degree 1 | trigger `none`
+score 0.6235 | dissimilarity 0.9821 | target in-degree 1 | trigger `under`
+
+**Anchor s254(1)** (Application for revival and rehabilitation.)
+
+> On the determination of a company as a sick company by the Tribunal under section 253, any secured creditor of that company or the company may make an application to the Tribunal for the determination of the measures that may be adopted with respect to the revival and rehabilitation of such company:
+
+**Target s5(1)** (Articles.)
+
+> The articles of a company shall contain the regulations for management of the company.
+
+```
+question:
+answer:
+gold_clauses: ["s254(1)", "s5(1)"]
+anchor_clause: "s254(1)"
+reference_path: [["s254(1)", "s5(1)"]]
+difficulty: one_hop
+```
+
+---
+
+## 43. s147(1) -> s142
+
+score 0.6229 | dissimilarity 0.9811 | target in-degree 1 | trigger `none`
+
+**Anchor s147(1)** (Punishment for contravention.)
+
+> If any of the provisions of sections 139 to 146 (both inclusive) is contravened, the company shall be punishable with fine which shall not be less than twenty-five thousand rupees but which may extend to five lakh rupees and every officer of the company who is in default shall be punishable with imp
+
+**Target s142** (Remuneration of auditors.)
+
+> (1) The remuneration of the auditor of a company shall be fixed in its general meeting or in such manner as may be determined therein: Provided that the Board may fix remuneration of the first auditor appointed by it. (2) The remuneration under sub-section (1) shall, in addition to the fee payable t
+
+```
+question:
+answer:
+gold_clauses: ["s147(1)", "s142"]
+anchor_clause: "s147(1)"
+reference_path: [["s147(1)", "s142"]]
+difficulty: one_hop
+```
+
+---
+
+## 44. s147(1) -> s146
+
+score 0.6217 | dissimilarity 0.9792 | target in-degree 1 | trigger `none`
 
 **Anchor s147(1)** (Punishment for contravention.)
 
@@ -1113,55 +1021,9 @@ difficulty: one_hop
 
 ---
 
-## 49. s124(5) -> s125(1)
+## 45. s147(1) -> s141
 
-score 0.6186 | dissimilarity 0.9762 | target in-degree 1 | trigger `under`
-
-**Anchor s124(5)** (Unpaid Dividend Account.)
-
-> Any money transferred to the Unpaid Dividend Account of a company in pursuance of this section which remains unpaid or unclaimed for a period of seven years from the date of such transfer shall be transferred by the company along with interest accrued, if any, thereon to the Fund established under s
-
-**Target s125(1)** (Investor Education and Protection Fund.)
-
-> The Central Government shall establish a Fund to be called the Investor Education and Protection Fund (herein referred to as the Fund).
-
-```
-question:
-answer:
-gold_clauses: ["s124(5)", "s125(1)"]
-anchor_clause: "s124(5)"
-reference_path: [["s124(5)", "s125(1)"]]
-difficulty: one_hop
-```
-
----
-
-## 50. s125(3)(d) -> s245
-
-score 0.6185 | dissimilarity 0.976 | target in-degree 1 | trigger `under`
-
-**Anchor s125(3)(d)** (Investor Education and Protection Fund.)
-
-> reimbursement of legal expenses incurred in pursuing class action suits under sections 37 and 245 by members, debenture-holders or depositors as may be sanctioned by the Tribunal; and
-
-**Target s245** (Class action.)
-
-> (1) Such number of member or members, depositor or depositors or any class of them, as the case may be, as are indicated in sub-section (2) may, if they are of the opinion that the management or conduct of the affairs of the company are being conducted in a manner prejudicial to the interests of the
-
-```
-question:
-answer:
-gold_clauses: ["s125(3)(d)", "s245"]
-anchor_clause: "s125(3)(d)"
-reference_path: [["s125(3)(d)", "s245"]]
-difficulty: one_hop
-```
-
----
-
-## 51. s147(1) -> s141
-
-score 0.6174 | dissimilarity 0.9444 | target in-degree 2 | trigger `none`
+score 0.6201 | dissimilarity 0.9444 | target in-degree 2 | trigger `none`
 
 **Anchor s147(1)** (Punishment for contravention.)
 
@@ -1182,9 +1044,55 @@ difficulty: one_hop
 
 ---
 
-## 52. s68(8) -> s62(1)(a)
+## 46. s124(5) -> s125(1)
 
-score 0.6158 | dissimilarity 0.9417 | target in-degree 2 | trigger `under`
+score 0.6199 | dissimilarity 0.9762 | target in-degree 1 | trigger `under`
+
+**Anchor s124(5)** (Unpaid Dividend Account.)
+
+> Any money transferred to the Unpaid Dividend Account of a company in pursuance of this section which remains unpaid or unclaimed for a period of seven years from the date of such transfer shall be transferred by the company along with interest accrued, if any, thereon to the Fund established under s
+
+**Target s125(1)** (Investor Education and Protection Fund.)
+
+> The Central Government shall establish a Fund to be called the Investor Education and Protection Fund (herein referred to as the Fund).
+
+```
+question:
+answer:
+gold_clauses: ["s124(5)", "s125(1)"]
+anchor_clause: "s124(5)"
+reference_path: [["s124(5)", "s125(1)"]]
+difficulty: one_hop
+```
+
+---
+
+## 47. s125(3)(d) -> s245
+
+score 0.6198 | dissimilarity 0.976 | target in-degree 1 | trigger `under`
+
+**Anchor s125(3)(d)** (Investor Education and Protection Fund.)
+
+> reimbursement of legal expenses incurred in pursuing class action suits under sections 37 and 245 by members, debenture-holders or depositors as may be sanctioned by the Tribunal; and
+
+**Target s245** (Class action.)
+
+> (1) Such number of member or members, depositor or depositors or any class of them, as the case may be, as are indicated in sub-section (2) may, if they are of the opinion that the management or conduct of the affairs of the company are being conducted in a manner prejudicial to the interests of the
+
+```
+question:
+answer:
+gold_clauses: ["s125(3)(d)", "s245"]
+anchor_clause: "s125(3)(d)"
+reference_path: [["s125(3)(d)", "s245"]]
+difficulty: one_hop
+```
+
+---
+
+## 48. s68(8) -> s62(1)(a)
+
+score 0.6185 | dissimilarity 0.9417 | target in-degree 2 | trigger `under`
 
 **Anchor s68(8)** (Power of company to purchase its own securities.)
 
@@ -1205,32 +1113,9 @@ difficulty: one_hop
 
 ---
 
-## 53. s424(4) -> s193
+## 49. s117(3)(e) -> s180(1)(c)
 
-score 0.6152 | dissimilarity 0.9706 | target in-degree 1 | trigger `within the meaning of`
-
-**Anchor s424(4)** (Procedure before Tribunal and Appellate Tribunal.)
-
-> All proceedings before the Tribunal or the Appellate Tribunal shall be deemed to be judicial proceedings within the meaning of sections 193 and 228, and for the purposes of section 196 of the Indian Penal Code (45 of 1860), and the Tribunal and the Appellate Tribunal shall be deemed to be civil cour
-
-**Target s193** (Contract by One Person Company.)
-
-> (1) Where One Person Company limited by shares or by guarantee enters into a contract with the sole member of the company who is also the director of the company, the company shall, unless the contract is in writing, ensure that the terms of the contract or offer are contained in a memorandum or are
-
-```
-question:
-answer:
-gold_clauses: ["s424(4)", "s193"]
-anchor_clause: "s424(4)"
-reference_path: [["s424(4)", "s193"]]
-difficulty: one_hop
-```
-
----
-
-## 54. s117(3)(e) -> s180(1)(c)
-
-score 0.6147 | dissimilarity 0.9697 | target in-degree 1 | trigger `none`
+score 0.616 | dissimilarity 0.9697 | target in-degree 1 | trigger `none`
 
 **Anchor s117(3)(e)** (Resolutions and agreements to be filed.)
 
@@ -1251,32 +1136,9 @@ difficulty: one_hop
 
 ---
 
-## 55. s125(3)(d) -> s37
+## 50. s167(1)(c) -> s184
 
-score 0.6129 | dissimilarity 0.9667 | target in-degree 1 | trigger `under`
-
-**Anchor s125(3)(d)** (Investor Education and Protection Fund.)
-
-> reimbursement of legal expenses incurred in pursuing class action suits under sections 37 and 245 by members, debenture-holders or depositors as may be sanctioned by the Tribunal; and
-
-**Target s37** (Action by affected persons.)
-
-> A suit may be filed or any other action may be taken under section 34 or section 35 or section 36 by any person, group of persons or any association of persons affected by any misleading statement or the inclusion or omission of any matter in the prospectus.
-
-```
-question:
-answer:
-gold_clauses: ["s125(3)(d)", "s37"]
-anchor_clause: "s125(3)(d)"
-reference_path: [["s125(3)(d)", "s37"]]
-difficulty: one_hop
-```
-
----
-
-## 56. s167(1)(c) -> s184
-
-score 0.6129 | dissimilarity 0.9369 | target in-degree 2 | trigger `none`
+score 0.6156 | dissimilarity 0.9369 | target in-degree 2 | trigger `none`
 
 **Anchor s167(1)(c)** (Vacation of office of director.)
 
@@ -1297,55 +1159,32 @@ difficulty: one_hop
 
 ---
 
-## 57. s424(4) -> s228
+## 51. s125(3)(d) -> s37
 
-score 0.6129 | dissimilarity 0.9667 | target in-degree 1 | trigger `within the meaning of`
+score 0.6142 | dissimilarity 0.9667 | target in-degree 1 | trigger `under`
 
-**Anchor s424(4)** (Procedure before Tribunal and Appellate Tribunal.)
+**Anchor s125(3)(d)** (Investor Education and Protection Fund.)
 
-> All proceedings before the Tribunal or the Appellate Tribunal shall be deemed to be judicial proceedings within the meaning of sections 193 and 228, and for the purposes of section 196 of the Indian Penal Code (45 of 1860), and the Tribunal and the Appellate Tribunal shall be deemed to be civil cour
+> reimbursement of legal expenses incurred in pursuing class action suits under sections 37 and 245 by members, debenture-holders or depositors as may be sanctioned by the Tribunal; and
 
-**Target s228** (Investigation, etc., of foreign companies.)
+**Target s37** (Action by affected persons.)
 
-> The provisions of this Chapter shall apply mutatis mutandis to inspection, inquiry or investigation in relation to foreign companies.
+> A suit may be filed or any other action may be taken under section 34 or section 35 or section 36 by any person, group of persons or any association of persons affected by any misleading statement or the inclusion or omission of any matter in the prospectus.
 
 ```
 question:
 answer:
-gold_clauses: ["s424(4)", "s228"]
-anchor_clause: "s424(4)"
-reference_path: [["s424(4)", "s228"]]
+gold_clauses: ["s125(3)(d)", "s37"]
+anchor_clause: "s125(3)(d)"
+reference_path: [["s125(3)(d)", "s37"]]
 difficulty: one_hop
 ```
 
 ---
 
-## 58. s212(15) -> s173
+## 52. s150(4) -> s149
 
-score 0.6106 | dissimilarity 0.963 | target in-degree 1 | trigger `under`
-
-**Anchor s212(15)** (Investigation into affairs of Company by Serious Fraud Investigation Office.)
-
-> Notwithstanding anything contained in this Act or in any other law for the time being in force, the investigation report filed with the Special Court for framing of charges shall be deemed to be a report filed by a police officer under section 173 of the Code of Criminal Procedure, 1973 (2 of 1974).
-
-**Target s173** (Meetings of Board.)
-
-> (1) Every company shall hold the first meeting of the Board of Directors within thirty days of the date of its incorporation and thereafter hold a minimum number of four meetings of its Board of Directors every year in such a manner that not more than one hundred and twenty days shall intervene betw
-
-```
-question:
-answer:
-gold_clauses: ["s212(15)", "s173"]
-anchor_clause: "s212(15)"
-reference_path: [["s212(15)", "s173"]]
-difficulty: one_hop
-```
-
----
-
-## 59. s150(4) -> s149
-
-score 0.6105 | dissimilarity 0.9627 | target in-degree 1 | trigger `under`
+score 0.6118 | dissimilarity 0.9627 | target in-degree 1 | trigger `under`
 
 **Anchor s150(4)** (Manner of selection of independent directors and maintenance of databank of independent directors.)
 
@@ -1366,9 +1205,9 @@ difficulty: one_hop
 
 ---
 
-## 60. s225(1)(a) -> s224
+## 53. s225(1)(a) -> s224
 
-score 0.6068 | dissimilarity 0.9268 | target in-degree 2 | trigger `under`
+score 0.6096 | dissimilarity 0.9268 | target in-degree 2 | trigger `under`
 
 **Anchor s225(1)(a)** (Expenses of investigation.)
 
@@ -1389,9 +1228,9 @@ difficulty: one_hop
 
 ---
 
-## 61. s254(3) -> s253
+## 54. s254(3) -> s253
 
-score 0.606 | dissimilarity 0.9255 | target in-degree 2 | trigger `under`
+score 0.6087 | dissimilarity 0.9255 | target in-degree 2 | trigger `under`
 
 **Anchor s254(3)** (Application for revival and rehabilitation.)
 
@@ -1412,9 +1251,9 @@ difficulty: one_hop
 
 ---
 
-## 62. s261(1) -> s254
+## 55. s261(1) -> s254
 
-score 0.6043 | dissimilarity 0.8929 | target in-degree 3 | trigger `under`
+score 0.6084 | dissimilarity 0.8929 | target in-degree 3 | trigger `under`
 
 **Anchor s261(1)** (Scheme of revival and rehabilitation.)
 
@@ -1435,9 +1274,9 @@ difficulty: one_hop
 
 ---
 
-## 63. s222(1) -> s216
+## 56. s222(1) -> s216
 
-score 0.6039 | dissimilarity 0.8922 | target in-degree 3 | trigger `under`
+score 0.608 | dissimilarity 0.8922 | target in-degree 3 | trigger `under`
 
 **Anchor s222(1)** (Imposition of restrictions upon securities.)
 
@@ -1458,55 +1297,9 @@ difficulty: one_hop
 
 ---
 
-## 64. s212(4) -> s217
+## 57. s306(1) -> s304
 
-score 0.6033 | dissimilarity 0.9508 | target in-degree 1 | trigger `under`
-
-**Anchor s212(4)** (Investigation into affairs of Company by Serious Fraud Investigation Office.)
-
-> The Director, Serious Fraud Investigation Office shall cause the affairs of the company to be investigated by an Investigating Officer who shall have the power of the inspector under section 217.
-
-**Target s217** (Procedure, powers, etc., of inspectors.)
-
-> (1) It shall be the duty of all officers and other employees and agents including the former officers, employees and agents of a company which is under investigation in accordance with the provisions contained in this Chapter, and where the affairs of any other body corporate or a person are investi
-
-```
-question:
-answer:
-gold_clauses: ["s212(4)", "s217"]
-anchor_clause: "s212(4)"
-reference_path: [["s212(4)", "s217"]]
-difficulty: one_hop
-```
-
----
-
-## 65. s232(1) -> s230(5)
-
-score 0.6032 | dissimilarity 0.9505 | target in-degree 1 | trigger `none`
-
-**Anchor s232(1)** (Merger and amalgamation of companies.)
-
-> Where an application is made to the Tribunal under section 230 for the sanctioning of a compromise or an arrangement proposed between a company and any such persons as are mentioned in that section, and it is shown to the Tribunal— (a) that the compromise or arrangement has been proposed for the pur
-
-**Target s230(5)** (Power to compromise or make arrangements with creditors and members.)
-
-> A notice under sub-section (3) along with all the documents in such form as may be prescribed shall also be sent to the Central Government, the income-tax authorities, the Reserve Bank of India, the Securities and Exchange Board, the Registrar, the respective stock exchanges, the Official Liquidator
-
-```
-question:
-answer:
-gold_clauses: ["s232(1)", "s230(5)"]
-anchor_clause: "s232(1)"
-reference_path: [["s232(1)", "s230(5)"]]
-difficulty: one_hop
-```
-
----
-
-## 66. s306(1) -> s304
-
-score 0.6021 | dissimilarity 0.9189 | target in-degree 2 | trigger `under`
+score 0.6048 | dissimilarity 0.9189 | target in-degree 2 | trigger `under`
 
 **Anchor s306(1)** (Meeting of creditors.)
 
@@ -1527,9 +1320,55 @@ difficulty: one_hop
 
 ---
 
-## 67. s131(1) -> s134
+## 58. s212(4) -> s217
 
-score 0.6014 | dissimilarity 0.9178 | target in-degree 2 | trigger `none`
+score 0.6047 | dissimilarity 0.9508 | target in-degree 1 | trigger `under`
+
+**Anchor s212(4)** (Investigation into affairs of Company by Serious Fraud Investigation Office.)
+
+> The Director, Serious Fraud Investigation Office shall cause the affairs of the company to be investigated by an Investigating Officer who shall have the power of the inspector under section 217.
+
+**Target s217** (Procedure, powers, etc., of inspectors.)
+
+> (1) It shall be the duty of all officers and other employees and agents including the former officers, employees and agents of a company which is under investigation in accordance with the provisions contained in this Chapter, and where the affairs of any other body corporate or a person are investi
+
+```
+question:
+answer:
+gold_clauses: ["s212(4)", "s217"]
+anchor_clause: "s212(4)"
+reference_path: [["s212(4)", "s217"]]
+difficulty: one_hop
+```
+
+---
+
+## 59. s232(1) -> s230(5)
+
+score 0.6045 | dissimilarity 0.9505 | target in-degree 1 | trigger `none`
+
+**Anchor s232(1)** (Merger and amalgamation of companies.)
+
+> Where an application is made to the Tribunal under section 230 for the sanctioning of a compromise or an arrangement proposed between a company and any such persons as are mentioned in that section, and it is shown to the Tribunal— (a) that the compromise or arrangement has been proposed for the pur
+
+**Target s230(5)** (Power to compromise or make arrangements with creditors and members.)
+
+> A notice under sub-section (3) along with all the documents in such form as may be prescribed shall also be sent to the Central Government, the income-tax authorities, the Reserve Bank of India, the Securities and Exchange Board, the Registrar, the respective stock exchanges, the Official Liquidator
+
+```
+question:
+answer:
+gold_clauses: ["s232(1)", "s230(5)"]
+anchor_clause: "s232(1)"
+reference_path: [["s232(1)", "s230(5)"]]
+difficulty: one_hop
+```
+
+---
+
+## 60. s131(1) -> s134
+
+score 0.6041 | dissimilarity 0.9178 | target in-degree 2 | trigger `none`
 
 **Anchor s131(1)** (Voluntary revision of financial statements or Board’s report.)
 
@@ -1550,32 +1389,9 @@ difficulty: one_hop
 
 ---
 
-## 68. s2(70) -> s32
+## 61. s117(1) -> s102
 
-score 0.6011 | dissimilarity 0.8971 | target in-degree 1 | trigger `referred to in`
-
-**Anchor s2(70)** (Definitions.)
-
-> “prospectus” means any document described or issued as a prospectus and includes a red herring prospectus referred to in section 32 or shelf prospectus referred to in section 31 or any notice, circular, advertisement or other document inviting offers from the public for the subscription or purchase 
-
-**Target s32** (Red herring prospectus.)
-
-> (1) A company proposing to make an offer of securities may issue a red herring prospectus prior to the issue of a prospectus. (2) A company proposing to issue a red herring prospectus under sub-section (1) shall file it with the Registrar at least three days prior to the opening of the subscription 
-
-```
-question:
-answer:
-gold_clauses: ["s2(70)", "s32"]
-anchor_clause: "s2(70)"
-reference_path: [["s2(70)", "s32"]]
-difficulty: one_hop
-```
-
----
-
-## 69. s117(1) -> s102
-
-score 0.601 | dissimilarity 0.9172 | target in-degree 2 | trigger `under`
+score 0.6038 | dissimilarity 0.9172 | target in-degree 2 | trigger `under`
 
 **Anchor s117(1)** (Resolutions and agreements to be filed.)
 
@@ -1596,32 +1412,9 @@ difficulty: one_hop
 
 ---
 
-## 70. s388(1)(b) -> s40
+## 62. s311(4) -> s310
 
-score 0.6009 | dissimilarity 0.9468 | target in-degree 1 | trigger `none`
-
-**Anchor s388(1)(b)** (Provisions as to expert’s consent and allotment.)
-
-> if the prospectus does not have the effect, where an application is made in pursuance thereof, of rendering all persons concerned bound by all the provisions of sections 33 and 40, so far as applicable.
-
-**Target s40** (Securities to be dealt with in stock exchanges.)
-
-> (1) Every company making public offer shall, before making such offer, make an application to one or more recognised stock exchange or exchanges and obtain permission for the securities to be dealt with in such stock exchange or exchanges. (2) Where a prospectus states that an application under sub-
-
-```
-question:
-answer:
-gold_clauses: ["s388(1)(b)", "s40"]
-anchor_clause: "s388(1)(b)"
-reference_path: [["s388(1)(b)", "s40"]]
-difficulty: one_hop
-```
-
----
-
-## 71. s311(4) -> s310
-
-score 0.6007 | dissimilarity 0.9167 | target in-degree 2 | trigger `under`
+score 0.6035 | dissimilarity 0.9167 | target in-degree 2 | trigger `under`
 
 **Anchor s311(4)** (Power to remove and fill vacancy of Company Liquidator.)
 
@@ -1642,124 +1435,9 @@ difficulty: one_hop
 
 ---
 
-## 72. s122(3) -> s118
+## 63. s244(1) -> s241
 
-score 0.6004 | dissimilarity 0.9161 | target in-degree 2 | trigger `under`
-
-**Anchor s122(3)** (Applicability of this Chapter to One Person Company.)
-
-> For the purposes of section 114, any business which is required to be transacted at an annual general meeting or other general meeting of a company by means of an ordinary or special resolution, it shall be sufficient if, in case of One Person Company, the resolution is communicated by the member to
-
-**Target s118** (Minutes of proceedings of general meeting, meeting of Board of Directors and other meeting and resolutions passed by postal ballot.)
-
-> (1) Every company shall cause minutes of the proceedings of every general meeting of any class of shareholders or creditors, and every resolution passed by postal ballot and every meeting of its Board of Directors or of every committee of the Board, to be prepared and signed in such manner as may be
-
-```
-question:
-answer:
-gold_clauses: ["s122(3)", "s118"]
-anchor_clause: "s122(3)"
-reference_path: [["s122(3)", "s118"]]
-difficulty: one_hop
-```
-
----
-
-## 73. s207(2) -> s206
-
-score 0.6004 | dissimilarity 0.9161 | target in-degree 2 | trigger `under`
-
-**Anchor s207(2)** (Conduct of inspection and inquiry.)
-
-> The Registrar or inspector, making an inspection or inquiry under section 206 may, during the course of such inspection or inquiry, as the case may be,— (a) make or cause to be made copies of books of account and other books and papers; or (b) place or cause to be placed any marks of identification 
-
-**Target s206** (Power to call for information, inspect books and conduct inquiries.)
-
-> (1) Where on a scrutiny of any document filed by a company or on any information received by him, the Registrar is of the opinion that any further information or explanation or any further documents relating to the company is necessary, he may by a written notice require the company— (a) to furnish 
-
-```
-question:
-answer:
-gold_clauses: ["s207(2)", "s206"]
-anchor_clause: "s207(2)"
-reference_path: [["s207(2)", "s206"]]
-difficulty: one_hop
-```
-
----
-
-## 74. s321(1) -> s319
-
-score 0.6 | dissimilarity 0.8952 | target in-degree 1 | trigger `referred to in`
-
-**Anchor s321(1)** (Arrangement when binding on company and creditors.)
-
-> Any arrangement other than the arrangement referred to in section 319 entered into between the company which is about to be, or is in the course of being wound up and its creditors shall be binding on the company and on the creditors if it is sanctioned by a special resolution of the company and acc
-
-**Target s319** (Power of Company Liquidator to accept shares, etc., as consideration for sale of property of company.)
-
-> (1) Where a company (the transferor company) is proposed to be, or is in the course of being, wound up voluntarily and the whole or any part of its business or property is proposed to be transferred or sold to another company (the transferee company), the Company Liquidator of the transferor company
-
-```
-question:
-answer:
-gold_clauses: ["s321(1)", "s319"]
-anchor_clause: "s321(1)"
-reference_path: [["s321(1)", "s319"]]
-difficulty: one_hop
-```
-
----
-
-## 75. s205(2) -> s204
-
-score 0.5999 | dissimilarity 0.9153 | target in-degree 2 | trigger `none`
-
-**Anchor s205(2)** (Functions of company secretary.)
-
-> The provisions contained in section 204 and section 205 shall not affect the duties and functions of the Board of Directors, chairperson of the company, managing director or whole-time director under this Act, or any other law for the time being in force.
-
-**Target s204** (Secretarial audit for bigger companies.)
-
-> (1) Every listed company and a company belonging to other class of companies as may be prescribed shall annex with its Board’s report made in terms of sub-section (3) of section 134, a secretarial audit report, given by a company secretary in practice, in such form as may be prescribed. (2) It shall
-
-```
-question:
-answer:
-gold_clauses: ["s205(2)", "s204"]
-anchor_clause: "s205(2)"
-reference_path: [["s205(2)", "s204"]]
-difficulty: one_hop
-```
-
----
-
-## 76. s174(3) -> s184(2)
-
-score 0.5993 | dissimilarity 0.9143 | target in-degree 2 | trigger `within the meaning of`
-
-**Anchor s174(3)** (Quorum for meetings of Board.)
-
-> Where at any time the number of interested directors exceeds or is equal to two-thirds of the total strength of the Board of Directors, the number of directors who are not interested directors and present at the meeting, being not less than two, shall be the quorum during such time. Explanation.— Fo
-
-**Target s184(2)** (Disclosure of interest by director.)
-
-> Every director of a company who is in any way, whether directly or indirectly, concerned or interested in a contract or arrangement or proposed contract or arrangement entered into or to be entered into— (a) with a body corporate in which such director or such director in association with any other 
-
-```
-question:
-answer:
-gold_clauses: ["s174(3)", "s184(2)"]
-anchor_clause: "s174(3)"
-reference_path: [["s174(3)", "s184(2)"]]
-difficulty: one_hop
-```
-
----
-
-## 77. s244(1) -> s241
-
-score 0.5991 | dissimilarity 0.8842 | target in-degree 3 | trigger `under`
+score 0.6032 | dissimilarity 0.8842 | target in-degree 3 | trigger `under`
 
 **Anchor s244(1)** (Right to apply under section 241.)
 
@@ -1780,9 +1458,170 @@ difficulty: one_hop
 
 ---
 
-## 78. s391(1) -> s35
+## 64. s122(3) -> s118
 
-score 0.5991 | dissimilarity 0.9438 | target in-degree 1 | trigger `none`
+score 0.6031 | dissimilarity 0.9161 | target in-degree 2 | trigger `under`
+
+**Anchor s122(3)** (Applicability of this Chapter to One Person Company.)
+
+> For the purposes of section 114, any business which is required to be transacted at an annual general meeting or other general meeting of a company by means of an ordinary or special resolution, it shall be sufficient if, in case of One Person Company, the resolution is communicated by the member to
+
+**Target s118** (Minutes of proceedings of general meeting, meeting of Board of Directors and other meeting and resolutions passed by postal ballot.)
+
+> (1) Every company shall cause minutes of the proceedings of every general meeting of any class of shareholders or creditors, and every resolution passed by postal ballot and every meeting of its Board of Directors or of every committee of the Board, to be prepared and signed in such manner as may be
+
+```
+question:
+answer:
+gold_clauses: ["s122(3)", "s118"]
+anchor_clause: "s122(3)"
+reference_path: [["s122(3)", "s118"]]
+difficulty: one_hop
+```
+
+---
+
+## 65. s207(2) -> s206
+
+score 0.6031 | dissimilarity 0.9161 | target in-degree 2 | trigger `under`
+
+**Anchor s207(2)** (Conduct of inspection and inquiry.)
+
+> The Registrar or inspector, making an inspection or inquiry under section 206 may, during the course of such inspection or inquiry, as the case may be,— (a) make or cause to be made copies of books of account and other books and papers; or (b) place or cause to be placed any marks of identification 
+
+**Target s206** (Power to call for information, inspect books and conduct inquiries.)
+
+> (1) Where on a scrutiny of any document filed by a company or on any information received by him, the Registrar is of the opinion that any further information or explanation or any further documents relating to the company is necessary, he may by a written notice require the company— (a) to furnish 
+
+```
+question:
+answer:
+gold_clauses: ["s207(2)", "s206"]
+anchor_clause: "s207(2)"
+reference_path: [["s207(2)", "s206"]]
+difficulty: one_hop
+```
+
+---
+
+## 66. s205(2) -> s204
+
+score 0.6026 | dissimilarity 0.9153 | target in-degree 2 | trigger `none`
+
+**Anchor s205(2)** (Functions of company secretary.)
+
+> The provisions contained in section 204 and section 205 shall not affect the duties and functions of the Board of Directors, chairperson of the company, managing director or whole-time director under this Act, or any other law for the time being in force.
+
+**Target s204** (Secretarial audit for bigger companies.)
+
+> (1) Every listed company and a company belonging to other class of companies as may be prescribed shall annex with its Board’s report made in terms of sub-section (3) of section 134, a secretarial audit report, given by a company secretary in practice, in such form as may be prescribed. (2) It shall
+
+```
+question:
+answer:
+gold_clauses: ["s205(2)", "s204"]
+anchor_clause: "s205(2)"
+reference_path: [["s205(2)", "s204"]]
+difficulty: one_hop
+```
+
+---
+
+## 67. s2(70) -> s32
+
+score 0.6025 | dissimilarity 0.8971 | target in-degree 1 | trigger `referred to in`
+
+**Anchor s2(70)** (Definitions.)
+
+> “prospectus” means any document described or issued as a prospectus and includes a red herring prospectus referred to in section 32 or shelf prospectus referred to in section 31 or any notice, circular, advertisement or other document inviting offers from the public for the subscription or purchase 
+
+**Target s32** (Red herring prospectus.)
+
+> (1) A company proposing to make an offer of securities may issue a red herring prospectus prior to the issue of a prospectus. (2) A company proposing to issue a red herring prospectus under sub-section (1) shall file it with the Registrar at least three days prior to the opening of the subscription 
+
+```
+question:
+answer:
+gold_clauses: ["s2(70)", "s32"]
+anchor_clause: "s2(70)"
+reference_path: [["s2(70)", "s32"]]
+difficulty: one_hop
+```
+
+---
+
+## 68. s388(1)(b) -> s40
+
+score 0.6023 | dissimilarity 0.9468 | target in-degree 1 | trigger `none`
+
+**Anchor s388(1)(b)** (Provisions as to expert’s consent and allotment.)
+
+> if the prospectus does not have the effect, where an application is made in pursuance thereof, of rendering all persons concerned bound by all the provisions of sections 33 and 40, so far as applicable.
+
+**Target s40** (Securities to be dealt with in stock exchanges.)
+
+> (1) Every company making public offer shall, before making such offer, make an application to one or more recognised stock exchange or exchanges and obtain permission for the securities to be dealt with in such stock exchange or exchanges. (2) Where a prospectus states that an application under sub-
+
+```
+question:
+answer:
+gold_clauses: ["s388(1)(b)", "s40"]
+anchor_clause: "s388(1)(b)"
+reference_path: [["s388(1)(b)", "s40"]]
+difficulty: one_hop
+```
+
+---
+
+## 69. s174(3) -> s184(2)
+
+score 0.602 | dissimilarity 0.9143 | target in-degree 2 | trigger `within the meaning of`
+
+**Anchor s174(3)** (Quorum for meetings of Board.)
+
+> Where at any time the number of interested directors exceeds or is equal to two-thirds of the total strength of the Board of Directors, the number of directors who are not interested directors and present at the meeting, being not less than two, shall be the quorum during such time. Explanation.— Fo
+
+**Target s184(2)** (Disclosure of interest by director.)
+
+> Every director of a company who is in any way, whether directly or indirectly, concerned or interested in a contract or arrangement or proposed contract or arrangement entered into or to be entered into— (a) with a body corporate in which such director or such director in association with any other 
+
+```
+question:
+answer:
+gold_clauses: ["s174(3)", "s184(2)"]
+anchor_clause: "s174(3)"
+reference_path: [["s174(3)", "s184(2)"]]
+difficulty: one_hop
+```
+
+---
+
+## 70. s321(1) -> s319
+
+score 0.6014 | dissimilarity 0.8952 | target in-degree 1 | trigger `referred to in`
+
+**Anchor s321(1)** (Arrangement when binding on company and creditors.)
+
+> Any arrangement other than the arrangement referred to in section 319 entered into between the company which is about to be, or is in the course of being wound up and its creditors shall be binding on the company and on the creditors if it is sanctioned by a special resolution of the company and acc
+
+**Target s319** (Power of Company Liquidator to accept shares, etc., as consideration for sale of property of company.)
+
+> (1) Where a company (the transferor company) is proposed to be, or is in the course of being, wound up voluntarily and the whole or any part of its business or property is proposed to be transferred or sold to another company (the transferee company), the Company Liquidator of the transferor company
+
+```
+question:
+answer:
+gold_clauses: ["s321(1)", "s319"]
+anchor_clause: "s321(1)"
+reference_path: [["s321(1)", "s319"]]
+difficulty: one_hop
+```
+
+---
+
+## 71. s391(1) -> s35
+
+score 0.6005 | dissimilarity 0.9438 | target in-degree 1 | trigger `none`
 
 **Anchor s391(1)** (Application of sections 34 to 36 and Chapter XX.)
 
@@ -1803,9 +1642,9 @@ difficulty: one_hop
 
 ---
 
-## 79. s134(3)(e) -> s178(1)
+## 72. s134(3)(e) -> s178(1)
 
-score 0.5962 | dissimilarity 0.9091 | target in-degree 2 | trigger `under`
+score 0.5989 | dissimilarity 0.9091 | target in-degree 2 | trigger `under`
 
 **Anchor s134(3)(e)** (Financial statement, Board’s report, etc.)
 
@@ -1826,9 +1665,9 @@ difficulty: one_hop
 
 ---
 
-## 80. s107(1) -> s109
+## 73. s107(1) -> s109
 
-score 0.5936 | dissimilarity 0.9048 | target in-degree 2 | trigger `under`
+score 0.5963 | dissimilarity 0.9048 | target in-degree 2 | trigger `under`
 
 **Anchor s107(1)** (Voting by show of hands.)
 
@@ -1849,9 +1688,9 @@ difficulty: one_hop
 
 ---
 
-## 81. s272(4) -> s271(1)
+## 74. s272(4) -> s271(1)
 
-score 0.5931 | dissimilarity 0.8962 | target in-degree 1 | trigger `specified in`
+score 0.5945 | dissimilarity 0.8962 | target in-degree 1 | trigger `specified in`
 
 **Anchor s272(4)** (Petition for winding up.)
 
@@ -1872,9 +1711,9 @@ difficulty: one_hop
 
 ---
 
-## 82. s399(1)(ii) -> s388(1)(b)
+## 75. s399(1)(ii) -> s388(1)(b)
 
-score 0.5929 | dissimilarity 0.9333 | target in-degree 1 | trigger `in pursuance of`
+score 0.5942 | dissimilarity 0.9333 | target in-degree 1 | trigger `in pursuance of`
 
 **Anchor s399(1)(ii)** (Inspection, production and evidence of documents kept by Registrar.)
 
@@ -1895,9 +1734,9 @@ difficulty: one_hop
 
 ---
 
-## 83. s87(1)(c) -> s82
+## 76. s87(1)(c) -> s82
 
-score 0.5918 | dissimilarity 0.9315 | target in-degree 1 | trigger `in pursuance of`
+score 0.5931 | dissimilarity 0.9315 | target in-degree 1 | trigger `in pursuance of`
 
 **Anchor s87(1)(c)** (Rectification by Central Government in register of charges.)
 
@@ -1918,9 +1757,9 @@ difficulty: one_hop
 
 ---
 
-## 84. s230(12) -> s66
+## 77. s230(12) -> s66
 
-score 0.5916 | dissimilarity 0.9312 | target in-degree 1 | trigger `none`
+score 0.5929 | dissimilarity 0.9312 | target in-degree 1 | trigger `none`
 
 **Anchor s230(12)** (Power to compromise or make arrangements with creditors and members.)
 
@@ -1941,9 +1780,9 @@ difficulty: one_hop
 
 ---
 
-## 85. s388(1)(b) -> s33
+## 78. s388(1)(b) -> s33
 
-score 0.5915 | dissimilarity 0.931 | target in-degree 1 | trigger `none`
+score 0.5929 | dissimilarity 0.931 | target in-degree 1 | trigger `none`
 
 **Anchor s388(1)(b)** (Provisions as to expert’s consent and allotment.)
 
@@ -1964,124 +1803,9 @@ difficulty: one_hop
 
 ---
 
-## 86. s306(2)(a) -> s305
+## 79. s4(1) -> s8
 
-score 0.5893 | dissimilarity 0.9274 | target in-degree 1 | trigger `under`
-
-**Anchor s306(2)(a)** (Meeting of creditors.)
-
-> cause to be presented a full statement of the position of the affairs of the company together with a list of creditors of the company, if any, copy of declaration under section 305 and the estimated amount of the claims before such meeting; and
-
-**Target s305** (Declaration of solvency in case of proposal to wind up voluntarily.)
-
-> (1) Where it is proposed to wind up a company voluntarily, its director or directors, or in case the company has more than two directors, the majority of its directors, shall, at a meeting of the Board, make a declaration verified by an affidavit to the effect that they have made a full inquiry into
-
-```
-question:
-answer:
-gold_clauses: ["s306(2)(a)", "s305"]
-anchor_clause: "s306(2)(a)"
-reference_path: [["s306(2)(a)", "s305"]]
-difficulty: one_hop
-```
-
----
-
-## 87. s117(3) -> s399
-
-score 0.5891 | dissimilarity 0.927 | target in-degree 1 | trigger `under`
-
-**Anchor s117(3)** (Resolutions and agreements to be filed.)
-
-> The provisions of this section shall apply to— (a) special resolutions; (b) resolutions which have been agreed to by all the members of a company, but which, if not so agreed to, would not have been effective for their purpose unless they had been passed as special resolutions; (c) any resolution of
-
-**Target s399** (Inspection, production and evidence of documents kept by Registrar.)
-
-> (1) Save as otherwise provided elsewhere in this Act, any person may— (a) inspect by electronic means any documents kept by the Registrar in accordance with the rules made, being documents filed or registered by him in pursuance of this Act, or making a record of any fact required or authorised to b
-
-```
-question:
-answer:
-gold_clauses: ["s117(3)", "s399"]
-anchor_clause: "s117(3)"
-reference_path: [["s117(3)", "s399"]]
-difficulty: one_hop
-```
-
----
-
-## 88. s458(1) -> s194
-
-score 0.5884 | dissimilarity 0.9259 | target in-degree 1 | trigger `none`
-
-**Anchor s458(1)** (Delegation by Central Government of its powers and functions.)
-
-> The Central Government may, by notification, and subject to such conditions, limitations and restrictions as may be specified therein, delegate any of its powers or functions under this Act other than the power to make rules to such authority or officer as may be specified in the notification: Provi
-
-**Target s194** (Prohibition on forward dealings in securities of company by director or key managerial personnel.)
-
-> (1) No director of a company or any of its key managerial personnel shall buy in the company, or in its holding, subsidiary or associate company— (a) a right to call for delivery or a right to make delivery at a specified price and within a specified time, of a specified number of relevant shares or
-
-```
-question:
-answer:
-gold_clauses: ["s458(1)", "s194"]
-anchor_clause: "s458(1)"
-reference_path: [["s458(1)", "s194"]]
-difficulty: one_hop
-```
-
----
-
-## 89. s384(3) -> s128
-
-score 0.5879 | dissimilarity 0.925 | target in-degree 1 | trigger `none`
-
-**Anchor s384(3)** (Debentures, annual return, registration of charges, books of account and their inspection.)
-
-> The provisions of section 128 shall apply to a foreign company to the extent of requiring it to keep at its principal place of business in India, the books of account referred to in that section, with respect to monies received and spent, sales and purchases made, and assets and liabilities, in the 
-
-**Target s128** (Books of account, etc., to be kept by company.)
-
-> (1) Every company shall prepare and keep at its registered office books of account and other relevant books and papers and financial statement for every financial year which give a true and fair view of the state of the affairs of the company, including that of its branch office or offices, if any, 
-
-```
-question:
-answer:
-gold_clauses: ["s384(3)", "s128"]
-anchor_clause: "s384(3)"
-reference_path: [["s384(3)", "s128"]]
-difficulty: one_hop
-```
-
----
-
-## 90. s147(1) -> s140
-
-score 0.5872 | dissimilarity 0.9239 | target in-degree 1 | trigger `none`
-
-**Anchor s147(1)** (Punishment for contravention.)
-
-> If any of the provisions of sections 139 to 146 (both inclusive) is contravened, the company shall be punishable with fine which shall not be less than twenty-five thousand rupees but which may extend to five lakh rupees and every officer of the company who is in default shall be punishable with imp
-
-**Target s140** (Removal, resignation of auditor and giving of special notice.)
-
-> (1) The auditor appointed under section 139 may be removed from his office before the expiry of his term only by a special resolution of the company, after obtaining the previous approval of the Central Government in that behalf in the prescribed manner: Provided that before taking any action under 
-
-```
-question:
-answer:
-gold_clauses: ["s147(1)", "s140"]
-anchor_clause: "s147(1)"
-reference_path: [["s147(1)", "s140"]]
-difficulty: one_hop
-```
-
----
-
-## 91. s4(1) -> s8
-
-score 0.5869 | dissimilarity 0.8638 | target in-degree 3 | trigger `under`
+score 0.591 | dissimilarity 0.8638 | target in-degree 3 | trigger `under`
 
 **Anchor s4(1)** (Memorandum.)
 
@@ -2102,9 +1826,78 @@ difficulty: one_hop
 
 ---
 
-## 92. s310(2) -> s306(3)
+## 80. s306(2)(a) -> s305
 
-score 0.5869 | dissimilarity 0.8936 | target in-degree 2 | trigger `under`
+score 0.5907 | dissimilarity 0.9274 | target in-degree 1 | trigger `under`
+
+**Anchor s306(2)(a)** (Meeting of creditors.)
+
+> cause to be presented a full statement of the position of the affairs of the company together with a list of creditors of the company, if any, copy of declaration under section 305 and the estimated amount of the claims before such meeting; and
+
+**Target s305** (Declaration of solvency in case of proposal to wind up voluntarily.)
+
+> (1) Where it is proposed to wind up a company voluntarily, its director or directors, or in case the company has more than two directors, the majority of its directors, shall, at a meeting of the Board, make a declaration verified by an affidavit to the effect that they have made a full inquiry into
+
+```
+question:
+answer:
+gold_clauses: ["s306(2)(a)", "s305"]
+anchor_clause: "s306(2)(a)"
+reference_path: [["s306(2)(a)", "s305"]]
+difficulty: one_hop
+```
+
+---
+
+## 81. s117(3) -> s399
+
+score 0.5904 | dissimilarity 0.927 | target in-degree 1 | trigger `under`
+
+**Anchor s117(3)** (Resolutions and agreements to be filed.)
+
+> The provisions of this section shall apply to— (a) special resolutions; (b) resolutions which have been agreed to by all the members of a company, but which, if not so agreed to, would not have been effective for their purpose unless they had been passed as special resolutions; (c) any resolution of
+
+**Target s399** (Inspection, production and evidence of documents kept by Registrar.)
+
+> (1) Save as otherwise provided elsewhere in this Act, any person may— (a) inspect by electronic means any documents kept by the Registrar in accordance with the rules made, being documents filed or registered by him in pursuance of this Act, or making a record of any fact required or authorised to b
+
+```
+question:
+answer:
+gold_clauses: ["s117(3)", "s399"]
+anchor_clause: "s117(3)"
+reference_path: [["s117(3)", "s399"]]
+difficulty: one_hop
+```
+
+---
+
+## 82. s458(1) -> s194
+
+score 0.5898 | dissimilarity 0.9259 | target in-degree 1 | trigger `none`
+
+**Anchor s458(1)** (Delegation by Central Government of its powers and functions.)
+
+> The Central Government may, by notification, and subject to such conditions, limitations and restrictions as may be specified therein, delegate any of its powers or functions under this Act other than the power to make rules to such authority or officer as may be specified in the notification: Provi
+
+**Target s194** (Prohibition on forward dealings in securities of company by director or key managerial personnel.)
+
+> (1) No director of a company or any of its key managerial personnel shall buy in the company, or in its holding, subsidiary or associate company— (a) a right to call for delivery or a right to make delivery at a specified price and within a specified time, of a specified number of relevant shares or
+
+```
+question:
+answer:
+gold_clauses: ["s458(1)", "s194"]
+anchor_clause: "s458(1)"
+reference_path: [["s458(1)", "s194"]]
+difficulty: one_hop
+```
+
+---
+
+## 83. s310(2) -> s306(3)
+
+score 0.5896 | dissimilarity 0.8936 | target in-degree 2 | trigger `under`
 
 **Anchor s310(2)** (Appointment of Company Liquidator.)
 
@@ -2125,9 +1918,55 @@ difficulty: one_hop
 
 ---
 
-## 93. s171(1) -> s170(1)
+## 84. s384(3) -> s128
 
-score 0.5867 | dissimilarity 0.9231 | target in-degree 1 | trigger `under`
+score 0.5892 | dissimilarity 0.925 | target in-degree 1 | trigger `none`
+
+**Anchor s384(3)** (Debentures, annual return, registration of charges, books of account and their inspection.)
+
+> The provisions of section 128 shall apply to a foreign company to the extent of requiring it to keep at its principal place of business in India, the books of account referred to in that section, with respect to monies received and spent, sales and purchases made, and assets and liabilities, in the 
+
+**Target s128** (Books of account, etc., to be kept by company.)
+
+> (1) Every company shall prepare and keep at its registered office books of account and other relevant books and papers and financial statement for every financial year which give a true and fair view of the state of the affairs of the company, including that of its branch office or offices, if any, 
+
+```
+question:
+answer:
+gold_clauses: ["s384(3)", "s128"]
+anchor_clause: "s384(3)"
+reference_path: [["s384(3)", "s128"]]
+difficulty: one_hop
+```
+
+---
+
+## 85. s147(1) -> s140
+
+score 0.5886 | dissimilarity 0.9239 | target in-degree 1 | trigger `none`
+
+**Anchor s147(1)** (Punishment for contravention.)
+
+> If any of the provisions of sections 139 to 146 (both inclusive) is contravened, the company shall be punishable with fine which shall not be less than twenty-five thousand rupees but which may extend to five lakh rupees and every officer of the company who is in default shall be punishable with imp
+
+**Target s140** (Removal, resignation of auditor and giving of special notice.)
+
+> (1) The auditor appointed under section 139 may be removed from his office before the expiry of his term only by a special resolution of the company, after obtaining the previous approval of the Central Government in that behalf in the prescribed manner: Provided that before taking any action under 
+
+```
+question:
+answer:
+gold_clauses: ["s147(1)", "s140"]
+anchor_clause: "s147(1)"
+reference_path: [["s147(1)", "s140"]]
+difficulty: one_hop
+```
+
+---
+
+## 86. s171(1) -> s170(1)
+
+score 0.5881 | dissimilarity 0.9231 | target in-degree 1 | trigger `under`
 
 **Anchor s171(1)** (Members’ right to inspect.)
 
@@ -2148,9 +1987,9 @@ difficulty: one_hop
 
 ---
 
-## 94. s13(1) -> s61
+## 87. s13(1) -> s61
 
-score 0.5861 | dissimilarity 0.9221 | target in-degree 1 | trigger `provided in`
+score 0.5875 | dissimilarity 0.9221 | target in-degree 1 | trigger `provided in`
 
 **Anchor s13(1)** (Alteration of memorandum.)
 
@@ -2171,9 +2010,9 @@ difficulty: one_hop
 
 ---
 
-## 95. s232(1) -> s230(4)
+## 88. s232(1) -> s230(4)
 
-score 0.5857 | dissimilarity 0.9213 | target in-degree 1 | trigger `none`
+score 0.587 | dissimilarity 0.9213 | target in-degree 1 | trigger `none`
 
 **Anchor s232(1)** (Merger and amalgamation of companies.)
 
@@ -2194,32 +2033,32 @@ difficulty: one_hop
 
 ---
 
-## 96. s439(1) -> s212(6)
+## 89. s143(7) -> s139(5)
 
-score 0.5839 | dissimilarity 0.8684 | target in-degree 1 | trigger `referred to in`
+score 0.5856 | dissimilarity 0.8548 | target in-degree 3 | trigger `under`
 
-**Anchor s439(1)** (Offences to be non-cognizable.)
+**Anchor s143(7)** (Powers and duties of auditors and auditing standards.)
 
-> Notwithstanding anything in the Code of Criminal Procedure, 1973 (2 of 1974), every offence under this Act except the offences referred to in sub-section (6) of section 212 shall be deemed to be noncognizable within the meaning of the said Code.
+> Without prejudice to the provisions of this Chapter, the Comptroller and Auditor-General of India may, in case of any company covered under sub-section (5) or sub-section (7) of section 139, if he considers necessary, by an order, cause test audit to be conducted of the accounts of such company and 
 
-**Target s212(6)** (Investigation into affairs of Company by Serious Fraud Investigation Office.)
+**Target s139(5)** (Appointment of auditors.)
 
-> Notwithstanding anything contained in the Code of Criminal Procedure, 1973 (2 of 1974), offence covered under section 447 of this Act shall be cognizable and no person accused of any offence under those sections shall be released on bail or on his own bond unless— (i) the Public Prosecutor has been 
+> Notwithstanding anything contained in sub-section (1), in the case of a Government company or any other company owned or controlled, directly or indirectly, by the Central Government, or by any State Government or Governments, or partly by the Central Government and partly by one or more State Gover
 
 ```
 question:
 answer:
-gold_clauses: ["s439(1)", "s212(6)"]
-anchor_clause: "s439(1)"
-reference_path: [["s439(1)", "s212(6)"]]
+gold_clauses: ["s143(7)", "s139(5)"]
+anchor_clause: "s143(7)"
+reference_path: [["s143(7)", "s139(5)"]]
 difficulty: one_hop
 ```
 
 ---
 
-## 97. s282(3) -> s340
+## 90. s282(3) -> s340
 
-score 0.5834 | dissimilarity 0.9175 | target in-degree 1 | trigger `under`
+score 0.5847 | dissimilarity 0.9175 | target in-degree 1 | trigger `under`
 
 **Anchor s282(3)** (Directions of Tribunal on report of Company Liquidator.)
 
@@ -2240,9 +2079,32 @@ difficulty: one_hop
 
 ---
 
-## 98. s271(1) -> s272
+## 91. s458(1) -> s195
 
-score 0.5809 | dissimilarity 0.8836 | target in-degree 2 | trigger `under`
+score 0.5846 | dissimilarity 0.9174 | target in-degree 1 | trigger `none`
+
+**Anchor s458(1)** (Delegation by Central Government of its powers and functions.)
+
+> The Central Government may, by notification, and subject to such conditions, limitations and restrictions as may be specified therein, delegate any of its powers or functions under this Act other than the power to make rules to such authority or officer as may be specified in the notification: Provi
+
+**Target s195** (Prohibition on insider trading of securities.)
+
+> (1) No person including any director or key managerial personnel of a company shall enter into insider trading: Provided that nothing contained in this sub-section shall apply to any communication required in the ordinary course of business or profession or employment or under any law. Explanation.—
+
+```
+question:
+answer:
+gold_clauses: ["s458(1)", "s195"]
+anchor_clause: "s458(1)"
+reference_path: [["s458(1)", "s195"]]
+difficulty: one_hop
+```
+
+---
+
+## 92. s271(1) -> s272
+
+score 0.5836 | dissimilarity 0.8836 | target in-degree 2 | trigger `under`
 
 **Anchor s271(1)** (Circumstances in which company may be wound up by Tribunal.)
 
@@ -2263,9 +2125,9 @@ difficulty: one_hop
 
 ---
 
-## 99. s122(3) -> s114
+## 93. s122(3) -> s114
 
-score 0.58 | dissimilarity 0.8571 | target in-degree 2 | trigger `for the purposes of`
+score 0.5827 | dissimilarity 0.8571 | target in-degree 2 | trigger `for the purposes of`
 
 **Anchor s122(3)** (Applicability of this Chapter to One Person Company.)
 
@@ -2286,55 +2148,9 @@ difficulty: one_hop
 
 ---
 
-## 100. s256(1)(b) -> s257
+## 94. s143(7) -> s139(7)
 
-score 0.579 | dissimilarity 0.9103 | target in-degree 1 | trigger `none`
-
-**Anchor s256(1)(b)** (Appointment of interim administrator.)
-
-> appoint an interim administrator to convene a meeting of creditors of the company in accordance with the provisions of section 257 to be held not later than forty-five days from receipt of the order of the Tribunal appointing him to consider whether on the basis of the particulars and documents furn
-
-**Target s257** (Committee of creditors.)
-
-> (1) The interim administrator shall appoint a committee of creditors with such number of members as he may determine, but not exceeding seven, and as far as possible a representative each of every class of creditors should be represented in that committee. (2) The holding of the meeting of the commi
-
-```
-question:
-answer:
-gold_clauses: ["s256(1)(b)", "s257"]
-anchor_clause: "s256(1)(b)"
-reference_path: [["s256(1)(b)", "s257"]]
-difficulty: one_hop
-```
-
----
-
-## 101. s97(1) -> s96
-
-score 0.5783 | dissimilarity 0.9091 | target in-degree 1 | trigger `under`
-
-**Anchor s97(1)** (Power of Tribunal to call annual general meeting.)
-
-> If any default is made in holding the annual general meeting of a company under section 96, the Tribunal may, notwithstanding anything contained in this Act or the articles of the company, on the application of any member of the company, call, or direct the calling of, an annual general meeting of t
-
-**Target s96** (Annual general meeting.)
-
-> (1) Every company other than a One Person Company shall in each year hold in addition to any other meetings, a general meeting as its annual general meeting and shall specify the meeting as such in the notices calling it, and not more than fifteen months shall elapse between the date of one annual g
-
-```
-question:
-answer:
-gold_clauses: ["s97(1)", "s96"]
-anchor_clause: "s97(1)"
-reference_path: [["s97(1)", "s96"]]
-difficulty: one_hop
-```
-
----
-
-## 102. s143(7) -> s139(7)
-
-score 0.578 | dissimilarity 0.8788 | target in-degree 2 | trigger `none`
+score 0.5807 | dissimilarity 0.8788 | target in-degree 2 | trigger `under`
 
 **Anchor s143(7)** (Powers and duties of auditors and auditing standards.)
 
@@ -2355,55 +2171,55 @@ difficulty: one_hop
 
 ---
 
-## 103. s231(2) -> s273
+## 95. s256(1)(b) -> s257
 
-score 0.5777 | dissimilarity 0.908 | target in-degree 1 | trigger `under`
+score 0.5804 | dissimilarity 0.9103 | target in-degree 1 | trigger `none`
 
-**Anchor s231(2)** (Power of Tribunal to enforce compromise or arrangement.)
+**Anchor s256(1)(b)** (Appointment of interim administrator.)
 
-> If the Tribunal is satisfied that the compromise or arrangement sanctioned under section 230 cannot be implemented satisfactorily with or without modifications, and the company is unable to pay its debts as per the scheme, it may make an order for winding up the company and such an order shall be de
+> appoint an interim administrator to convene a meeting of creditors of the company in accordance with the provisions of section 257 to be held not later than forty-five days from receipt of the order of the Tribunal appointing him to consider whether on the basis of the particulars and documents furn
 
-**Target s273** (Powers of Tribunal.)
+**Target s257** (Committee of creditors.)
 
-> (1) The Tribunal may, on receipt of a petition for winding up under section 272 pass any of the following orders, namely:— (a) dismiss it, with or without costs; (b) make any interim order as it thinks fit; (c) appoint a provisional liquidator of the company till the making of a winding up order; (d
+> (1) The interim administrator shall appoint a committee of creditors with such number of members as he may determine, but not exceeding seven, and as far as possible a representative each of every class of creditors should be represented in that committee. (2) The holding of the meeting of the commi
 
 ```
 question:
 answer:
-gold_clauses: ["s231(2)", "s273"]
-anchor_clause: "s231(2)"
-reference_path: [["s231(2)", "s273"]]
+gold_clauses: ["s256(1)(b)", "s257"]
+anchor_clause: "s256(1)(b)"
+reference_path: [["s256(1)(b)", "s257"]]
 difficulty: one_hop
 ```
 
 ---
 
-## 104. s42(2) -> s62(1)(b)
+## 96. s97(1) -> s96
 
-score 0.577 | dissimilarity 0.907 | target in-degree 1 | trigger `none`
+score 0.5797 | dissimilarity 0.9091 | target in-degree 1 | trigger `under`
 
-**Anchor s42(2)** (Offer or invitation for subscription of securities on private placement.)
+**Anchor s97(1)** (Power of Tribunal to call annual general meeting.)
 
-> Subject to sub-section (1), the offer of securities or invitation to subscribe securities, shall be made to such number of persons not exceeding fifty or such higher number as may be prescribed, excluding qualified institutional buyers and employees of the company being offered securities under a sc
+> If any default is made in holding the annual general meeting of a company under section 96, the Tribunal may, notwithstanding anything contained in this Act or the articles of the company, on the application of any member of the company, call, or direct the calling of, an annual general meeting of t
 
-**Target s62(1)(b)** (Further issue of share capital.)
+**Target s96** (Annual general meeting.)
 
-> to employees under a scheme of employees’ stock option, subject to special resolution passed by company and subject to such conditions as may be prescribed; or
+> (1) Every company other than a One Person Company shall in each year hold in addition to any other meetings, a general meeting as its annual general meeting and shall specify the meeting as such in the notices calling it, and not more than fifteen months shall elapse between the date of one annual g
 
 ```
 question:
 answer:
-gold_clauses: ["s42(2)", "s62(1)(b)"]
-anchor_clause: "s42(2)"
-reference_path: [["s42(2)", "s62(1)(b)"]]
+gold_clauses: ["s97(1)", "s96"]
+anchor_clause: "s97(1)"
+reference_path: [["s97(1)", "s96"]]
 difficulty: one_hop
 ```
 
 ---
 
-## 105. s224(2) -> s223
+## 97. s224(2) -> s223
 
-score 0.5767 | dissimilarity 0.8767 | target in-degree 2 | trigger `under`
+score 0.5795 | dissimilarity 0.8767 | target in-degree 2 | trigger `under`
 
 **Anchor s224(2)** (Actions to be taken in pursuance of inspector’s report.)
 
@@ -2424,55 +2240,32 @@ difficulty: one_hop
 
 ---
 
-## 106. s262(1) -> s261
+## 98. s231(2) -> s273
 
-score 0.5764 | dissimilarity 0.9059 | target in-degree 1 | trigger `under`
+score 0.5791 | dissimilarity 0.908 | target in-degree 1 | trigger `under`
 
-**Anchor s262(1)** (Sanction of scheme.)
+**Anchor s231(2)** (Power of Tribunal to enforce compromise or arrangement.)
 
-> The scheme prepared by the company administrator under section 261 shall be placed before the creditors of the sick company in a meeting convened for their approval by the company administrator within the period of sixty days from his appointment, which may be extended by the Tribunal up to a period
+> If the Tribunal is satisfied that the compromise or arrangement sanctioned under section 230 cannot be implemented satisfactorily with or without modifications, and the company is unable to pay its debts as per the scheme, it may make an order for winding up the company and such an order shall be de
 
-**Target s261** (Scheme of revival and rehabilitation.)
+**Target s273** (Powers of Tribunal.)
 
-> (1) The company administrator shall prepare or cause to be prepared a scheme of revival and rehabilitation of the sick company after considering the draft scheme filed along with the application under section 254. (2) A scheme prepared in relation to any sick company under sub-section (1) may provid
+> (1) The Tribunal may, on receipt of a petition for winding up under section 272 pass any of the following orders, namely:— (a) dismiss it, with or without costs; (b) make any interim order as it thinks fit; (c) appoint a provisional liquidator of the company till the making of a winding up order; (d
 
 ```
 question:
 answer:
-gold_clauses: ["s262(1)", "s261"]
-anchor_clause: "s262(1)"
-reference_path: [["s262(1)", "s261"]]
+gold_clauses: ["s231(2)", "s273"]
+anchor_clause: "s231(2)"
+reference_path: [["s231(2)", "s273"]]
 difficulty: one_hop
 ```
 
 ---
 
-## 107. s94(1) -> s88
+## 99. s87(1)(c) -> s83
 
-score 0.5763 | dissimilarity 0.9057 | target in-degree 1 | trigger `under`
-
-**Anchor s94(1)** (Place of keeping and inspection of registers, returns, etc.)
-
-> The registers required to be kept and maintained by a company under section 88 and copies of the annual return filed under section 92 shall be kept at the registered office of the company: Provided that such registers or copies of return may also be kept at any other place in India in which more tha
-
-**Target s88** (Register of members, etc.)
-
-> (1) Every company shall keep and maintain the following registers in such form and in such manner as may be prescribed, namely:— (a) register of members indicating separately for each class of equity and preference shares held by each member residing in or outside India; (b) register of debenture-ho
-
-```
-question:
-answer:
-gold_clauses: ["s94(1)", "s88"]
-anchor_clause: "s94(1)"
-reference_path: [["s94(1)", "s88"]]
-difficulty: one_hop
-```
-
----
-
-## 108. s87(1)(c) -> s83
-
-score 0.5757 | dissimilarity 0.875 | target in-degree 2 | trigger `none`
+score 0.5785 | dissimilarity 0.875 | target in-degree 2 | trigger `none`
 
 **Anchor s87(1)(c)** (Rectification by Central Government in register of charges.)
 
@@ -2493,9 +2286,9 @@ difficulty: one_hop
 
 ---
 
-## 109. s217(1) -> s219
+## 100. s217(1) -> s219
 
-score 0.5757 | dissimilarity 0.875 | target in-degree 2 | trigger `under`
+score 0.5785 | dissimilarity 0.875 | target in-degree 2 | trigger `under`
 
 **Anchor s217(1)** (Procedure, powers, etc., of inspectors.)
 
@@ -2516,9 +2309,78 @@ difficulty: one_hop
 
 ---
 
-## 110. s225(1) -> s214
+## 101. s42(2) -> s62(1)(b)
 
-score 0.575 | dissimilarity 0.9036 | target in-degree 1 | trigger `under`
+score 0.5784 | dissimilarity 0.907 | target in-degree 1 | trigger `none`
+
+**Anchor s42(2)** (Offer or invitation for subscription of securities on private placement.)
+
+> Subject to sub-section (1), the offer of securities or invitation to subscribe securities, shall be made to such number of persons not exceeding fifty or such higher number as may be prescribed, excluding qualified institutional buyers and employees of the company being offered securities under a sc
+
+**Target s62(1)(b)** (Further issue of share capital.)
+
+> to employees under a scheme of employees’ stock option, subject to special resolution passed by company and subject to such conditions as may be prescribed; or
+
+```
+question:
+answer:
+gold_clauses: ["s42(2)", "s62(1)(b)"]
+anchor_clause: "s42(2)"
+reference_path: [["s42(2)", "s62(1)(b)"]]
+difficulty: one_hop
+```
+
+---
+
+## 102. s262(1) -> s261
+
+score 0.5778 | dissimilarity 0.9059 | target in-degree 1 | trigger `under`
+
+**Anchor s262(1)** (Sanction of scheme.)
+
+> The scheme prepared by the company administrator under section 261 shall be placed before the creditors of the sick company in a meeting convened for their approval by the company administrator within the period of sixty days from his appointment, which may be extended by the Tribunal up to a period
+
+**Target s261** (Scheme of revival and rehabilitation.)
+
+> (1) The company administrator shall prepare or cause to be prepared a scheme of revival and rehabilitation of the sick company after considering the draft scheme filed along with the application under section 254. (2) A scheme prepared in relation to any sick company under sub-section (1) may provid
+
+```
+question:
+answer:
+gold_clauses: ["s262(1)", "s261"]
+anchor_clause: "s262(1)"
+reference_path: [["s262(1)", "s261"]]
+difficulty: one_hop
+```
+
+---
+
+## 103. s94(1) -> s88
+
+score 0.5776 | dissimilarity 0.9057 | target in-degree 1 | trigger `under`
+
+**Anchor s94(1)** (Place of keeping and inspection of registers, returns, etc.)
+
+> The registers required to be kept and maintained by a company under section 88 and copies of the annual return filed under section 92 shall be kept at the registered office of the company: Provided that such registers or copies of return may also be kept at any other place in India in which more tha
+
+**Target s88** (Register of members, etc.)
+
+> (1) Every company shall keep and maintain the following registers in such form and in such manner as may be prescribed, namely:— (a) register of members indicating separately for each class of equity and preference shares held by each member residing in or outside India; (b) register of debenture-ho
+
+```
+question:
+answer:
+gold_clauses: ["s94(1)", "s88"]
+anchor_clause: "s94(1)"
+reference_path: [["s94(1)", "s88"]]
+difficulty: one_hop
+```
+
+---
+
+## 104. s225(1) -> s214
+
+score 0.5764 | dissimilarity 0.9036 | target in-degree 1 | trigger `under`
 
 **Anchor s225(1)** (Expenses of investigation.)
 
@@ -2539,9 +2401,9 @@ difficulty: one_hop
 
 ---
 
-## 111. s66(8) -> s271(2)
+## 105. s66(8) -> s271(2)
 
-score 0.5739 | dissimilarity 0.9018 | target in-degree 1 | trigger `within the meaning of`
+score 0.5753 | dissimilarity 0.9018 | target in-degree 1 | trigger `within the meaning of`
 
 **Anchor s66(8)** (Reduction of share capital.)
 
@@ -2562,9 +2424,9 @@ difficulty: one_hop
 
 ---
 
-## 112. s8(9) -> s269
+## 106. s8(9) -> s269
 
-score 0.5737 | dissimilarity 0.9014 | target in-degree 1 | trigger `under`
+score 0.5751 | dissimilarity 0.9014 | target in-degree 1 | trigger `under`
 
 **Anchor s8(9)** (Formulation of companies with charitable objects, etc.)
 
@@ -2585,9 +2447,9 @@ difficulty: one_hop
 
 ---
 
-## 113. s173(5) -> s174
+## 107. s173(5) -> s174
 
-score 0.571 | dissimilarity 0.8969 | target in-degree 1 | trigger `none`
+score 0.5724 | dissimilarity 0.8969 | target in-degree 1 | trigger `none`
 
 **Anchor s173(5)** (Meetings of Board.)
 
@@ -2608,9 +2470,9 @@ difficulty: one_hop
 
 ---
 
-## 114. s282(3) -> s339
+## 108. s282(3) -> s339
 
-score 0.5706 | dissimilarity 0.8963 | target in-degree 1 | trigger `under`
+score 0.572 | dissimilarity 0.8963 | target in-degree 1 | trigger `under`
 
 **Anchor s282(3)** (Directions of Tribunal on report of Company Liquidator.)
 
@@ -2631,9 +2493,9 @@ difficulty: one_hop
 
 ---
 
-## 115. s391(1) -> s34
+## 109. s391(1) -> s34
 
-score 0.5704 | dissimilarity 0.8958 | target in-degree 1 | trigger `none`
+score 0.5717 | dissimilarity 0.8958 | target in-degree 1 | trigger `none`
 
 **Anchor s391(1)** (Application of sections 34 to 36 and Chapter XX.)
 
@@ -2654,32 +2516,9 @@ difficulty: one_hop
 
 ---
 
-## 116. s352(5) -> s348(1)
+## 110. s136(1) -> s101
 
-score 0.5697 | dissimilarity 0.8947 | target in-degree 1 | trigger `in pursuance of`
-
-**Anchor s352(5)** (Company Liquidation Dividend and Undistributed Assets Account.)
-
-> Where a company is being wound up voluntarily, the Company Liquidator shall, when filing a statement in pursuance of sub-section (1) of section 348, indicate the sum of money which is payable under sub-sections (1) and (2) of this section during the six months preceding the date on which the said st
-
-**Target s348(1)** (Information as to pending liquidations.)
-
-> If the winding up of a company is not concluded within one year after its commencement, the Company Liquidator shall, unless he is exempted from so doing either wholly or in part by the Central Government, within two months of the expiry of such year and thereafter until the winding up is concluded,
-
-```
-question:
-answer:
-gold_clauses: ["s352(5)", "s348(1)"]
-anchor_clause: "s352(5)"
-reference_path: [["s352(5)", "s348(1)"]]
-difficulty: one_hop
-```
-
----
-
-## 117. s136(1) -> s101
-
-score 0.5689 | dissimilarity 0.8636 | target in-degree 2 | trigger `none`
+score 0.5716 | dissimilarity 0.8636 | target in-degree 2 | trigger `none`
 
 **Anchor s136(1)** (Right of member to copies of audited financial statement.)
 
@@ -2700,9 +2539,32 @@ difficulty: one_hop
 
 ---
 
-## 118. s274(3) -> s273(1)(d)
+## 111. s352(5) -> s348(1)
 
-score 0.5686 | dissimilarity 0.8929 | target in-degree 1 | trigger `under`
+score 0.5711 | dissimilarity 0.8947 | target in-degree 1 | trigger `in pursuance of`
+
+**Anchor s352(5)** (Company Liquidation Dividend and Undistributed Assets Account.)
+
+> Where a company is being wound up voluntarily, the Company Liquidator shall, when filing a statement in pursuance of sub-section (1) of section 348, indicate the sum of money which is payable under sub-sections (1) and (2) of this section during the six months preceding the date on which the said st
+
+**Target s348(1)** (Information as to pending liquidations.)
+
+> If the winding up of a company is not concluded within one year after its commencement, the Company Liquidator shall, unless he is exempted from so doing either wholly or in part by the Central Government, within two months of the expiry of such year and thereafter until the winding up is concluded,
+
+```
+question:
+answer:
+gold_clauses: ["s352(5)", "s348(1)"]
+anchor_clause: "s352(5)"
+reference_path: [["s352(5)", "s348(1)"]]
+difficulty: one_hop
+```
+
+---
+
+## 112. s274(3) -> s273(1)(d)
+
+score 0.5699 | dissimilarity 0.8929 | target in-degree 1 | trigger `under`
 
 **Anchor s274(3)** (Direction for filing statement of affairs.)
 
@@ -2723,9 +2585,9 @@ difficulty: one_hop
 
 ---
 
-## 119. s221(1) -> s244(1)
+## 113. s221(1) -> s244(1)
 
-score 0.5675 | dissimilarity 0.8911 | target in-degree 1 | trigger `under`
+score 0.5689 | dissimilarity 0.8911 | target in-degree 1 | trigger `under`
 
 **Anchor s221(1)** (Freezing of assets of company on inquiry and investigation.)
 
@@ -2746,9 +2608,9 @@ difficulty: one_hop
 
 ---
 
-## 120. s241(1) -> s244
+## 114. s241(1) -> s244
 
-score 0.5669 | dissimilarity 0.89 | target in-degree 1 | trigger `under`
+score 0.5682 | dissimilarity 0.89 | target in-degree 1 | trigger `under`
 
 **Anchor s241(1)** (Application to Tribunal for relief in cases of oppression, etc.)
 
@@ -2764,6 +2626,144 @@ answer:
 gold_clauses: ["s241(1)", "s244"]
 anchor_clause: "s241(1)"
 reference_path: [["s241(1)", "s244"]]
+difficulty: one_hop
+```
+
+---
+
+## 115. s189(2) -> s184(1)
+
+score 0.5678 | dissimilarity 0.8519 | target in-degree 1 | trigger `specified in`
+
+**Anchor s189(2)** (Register of contracts or arrangements in which directors are interested.)
+
+> Every director or key managerial personnel shall, within a period of thirty days of his appointment, or relinquishment of his office, as the case may be, disclose to the company the particulars specified in subsection (1) of section 184 relating to his concern or interest in the other associations w
+
+**Target s184(1)** (Disclosure of interest by director.)
+
+> Every director shall at the first meeting of the Board in which he participates as a director and thereafter at the first meeting of the Board in every financial year or whenever there is any change in the disclosures already made, then at the first Board meeting held after such change, disclose his
+
+```
+question:
+answer:
+gold_clauses: ["s189(2)", "s184(1)"]
+anchor_clause: "s189(2)"
+reference_path: [["s189(2)", "s184(1)"]]
+difficulty: one_hop
+```
+
+---
+
+## 116. s183(1) -> s182
+
+score 0.5676 | dissimilarity 0.8889 | target in-degree 1 | trigger `none`
+
+**Anchor s183(1)** (Power of Board and other persons to make contributions to national defence fund, etc.)
+
+> The Board of Directors of any company or any person or authority exercising the powers of the Board of Directors of a company, or of the company in general meeting, may, notwithstanding anything contained in sections 180, 181 and section 182 or any other provision of this Act or in the memorandum, a
+
+**Target s182** (Prohibitions and restrictions regarding political contributions.)
+
+> (1) Notwithstanding anything contained in any other provision of this Act, a company, other than a Government company and a company which has been in existence for less than three financial years, may contribute any amount directly or indirectly to any political party: Provided that the amount refer
+
+```
+question:
+answer:
+gold_clauses: ["s183(1)", "s182"]
+anchor_clause: "s183(1)"
+reference_path: [["s183(1)", "s182"]]
+difficulty: one_hop
+```
+
+---
+
+## 117. s282(3) -> s342
+
+score 0.5671 | dissimilarity 0.8881 | target in-degree 1 | trigger `under`
+
+**Anchor s282(3)** (Directions of Tribunal on report of Company Liquidator.)
+
+> Where a report is received from the Company Liquidator or the Central Government or any person that a fraud has been committed in respect of the company, the Tribunal shall, without prejudice to the process of winding up, order for investigation under section 210, and on consideration of the report 
+
+**Target s342** (Prosecution of delinquent officers and members of company.)
+
+> (1) If it appears to the Tribunal in the course of a winding up by the Tribunal, that any person, who is or has been an officer, or any member, of the company has been guilty of any offence in relation to the company, the Tribunal may, either on the application of any person interested in the windin
+
+```
+question:
+answer:
+gold_clauses: ["s282(3)", "s342"]
+anchor_clause: "s282(3)"
+reference_path: [["s282(3)", "s342"]]
+difficulty: one_hop
+```
+
+---
+
+## 118. s436(1)(a) -> s435(1)
+
+score 0.565 | dissimilarity 0.8846 | target in-degree 1 | trigger `under`
+
+**Anchor s436(1)(a)** (Offences triable by Special Courts.)
+
+> all offences specified under sub-section (1) of section 435 shall be triable only by the Special Court established for the area in which the registered office of the company in relation to which the offence is committed or where there are more Special Courts than one for such area, by such one of th
+
+**Target s435(1)** (Establishment of Special Courts.)
+
+> The Central Government may, for the purpose of providing speedy trial of offences punishable under this Act with imprisonment of two years or more, by notification, establish or designate as many Special Courts as may be necessary: Provided that all other offences shall be tried, as the case may be,
+
+```
+question:
+answer:
+gold_clauses: ["s436(1)(a)", "s435(1)"]
+anchor_clause: "s436(1)(a)"
+reference_path: [["s436(1)(a)", "s435(1)"]]
+difficulty: one_hop
+```
+
+---
+
+## 119. s68(11) -> s70
+
+score 0.5645 | dissimilarity 0.8837 | target in-degree 1 | trigger `none`
+
+**Anchor s68(11)** (Power of company to purchase its own securities.)
+
+> If a company makes any default in complying with the provisions of this section or any regulation made by the Securities and Exchange Board, for the purposes of clause (f) of sub-section (2), the company shall be punishable with fine which shall not be less than one lakh rupees but which may extend 
+
+**Target s70** (Prohibition for buy-back in certain circumstances.)
+
+> (1) No company shall directly or indirectly purchase its own shares or other specified securities— (a) through any subsidiary company including its own subsidiary companies; (b) through any investment company or group of investment companies; or (c) if a default, is made by the company, in the repay
+
+```
+question:
+answer:
+gold_clauses: ["s68(11)", "s70"]
+anchor_clause: "s68(11)"
+reference_path: [["s68(11)", "s70"]]
+difficulty: one_hop
+```
+
+---
+
+## 120. s233(12) -> s232(1)(b)
+
+score 0.5636 | dissimilarity 0.8824 | target in-degree 1 | trigger `none`
+
+**Anchor s233(12)** (Merger or amalgamation of certain companies.)
+
+> The provisions of this section shall mutatis mutandis apply to a company or companies specified in sub-section (1) in respect of a scheme of compromise or arrangement referred to in section 230 or division or transfer of a company referred to clause (b) of subsection (1) of section 232.
+
+**Target s232(1)(b)** (Merger and amalgamation of companies.)
+
+> that under the scheme, the whole or any part of the undertaking, property or liabilities of any company (hereinafter referred to as the transferor company) is required to be transferred to another company (hereinafter referred to as the transferee company), or is proposed to be divided among and tra
+
+```
+question:
+answer:
+gold_clauses: ["s233(12)", "s232(1)(b)"]
+anchor_clause: "s233(12)"
+reference_path: [["s233(12)", "s232(1)(b)"]]
 difficulty: one_hop
 ```
 

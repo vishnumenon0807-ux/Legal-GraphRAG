@@ -126,6 +126,58 @@ cross-instrument multi-hop structure lives. The schema, graph and metrics all
 survive that change, so nothing done now is wasted if it happens later. The
 clause ids would need the corpus prefix from `config.CORPORA` at that point.
 
+## Stage 3/4: first ablation (PRELIMINARY, 30 questions)
+
+```powershell
+python scripts\run_baseline.py
+```
+
+Retrieval unit is the section (471 units, indexed on full subtree text). A gold
+clause counts as retrieved when its containing section is retrieved, which is
+deliberately generous to the baseline. **Context budget is fixed at k=10 for
+every setting**, so expansion spends slots rather than adding them: an expanded
+run trades lexical hits ranked 6-10 for referenced sections.
+
+| setting | recall@10 | prec@10 | gold coverage |
+|---|---|---|---|
+| BM25, no expansion | 0.856 | 0.173 | 0.733 |
+| base 8 + depth 1 | 0.933 | 0.197 | 0.900 |
+| base 6 + depth 1 | 0.950 | 0.233 | 0.933 |
+| base 5 + depth 2 | 0.950 | 0.227 | 0.933 |
+| base 3 + depth 1 | 0.883 | **0.309** | 0.833 |
+| base 6 + depth 1, bidirectional | **0.983** | 0.217 | **0.967** |
+
+Coverage 0.733 to 0.967, and precision rises too, because the expanded set is
+smaller (9.3 vs 10.0) while containing more of what was needed.
+
+Expansion rescued 7 questions and broke none. The rescued set is the hub
+argument made concrete: s447 twice, then s403, s180, s198, s26, s147.
+
+Three things the ablation showed that the stage 1 statistics did not:
+
+- **Depth 2 adds nothing** (0.933 at both depths), matching the stage 1 finding
+  that only 15 clauses support a cross-section 2-hop chain. Deeper traversal is
+  not the lever here.
+- **Reverse edges matter.** Reference direction and question direction disagree
+  when the consequence sits in the referencing clause: s147 points at s139, so
+  "penalty for failing to appoint an auditor" retrieves s139 and must follow
+  that edge backwards. Outgoing-only expansion cannot, and `base 6 + d1` leaves
+  those questions uncovered. Bidirectional fixes it at a small precision cost.
+- **Over-seeding hurts.** `base 3` expands from too few lexical hits and loses
+  gold sections the baseline had found, dropping coverage to 0.833.
+
+### Why these numbers are not a result yet
+
+30 questions means one question is 3.3 points, so every gap in that table is
+within a few questions of noise. The baseline is also BM25 only: dense
+retrieval and a cross-encoder reranker are not in it, and hybrid+rerank beats
+lexical on most corpora without any graph. **Until the baseline is hybrid, the
+improvement above is an upper bound on what the graph is worth, not a
+measurement of it.**
+
+Model weights are unreachable from the authoring sandbox, so `dense.py` and
+`hybrid.py` are still stubs and have to be built and run locally.
+
 ## Known limitations
 
 - Schedules are detected (15 references) but not parsed or resolved.
