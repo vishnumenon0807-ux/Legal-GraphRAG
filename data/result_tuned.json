@@ -1,0 +1,49 @@
+{
+  "baseline_sweep": {
+    "best": {
+      "k1": 1.5,
+      "b": 0.5,
+      "heading_repeats": 2,
+      "gold_coverage": 0.7666666666666667
+    },
+    "worst_gold_coverage": 0.6333333333333333,
+    "configs_tried": 80
+  },
+  "ablation": {
+    "tuned BM25, no expansion": {
+      "n": 30,
+      "k": 10,
+      "recall@k": 0.8722222222222222,
+      "precision@k": 0.1766666666666667,
+      "gold_coverage": 0.7666666666666667
+    },
+    "tuned + base 8 d1": {
+      "n": 30,
+      "k": 10,
+      "recall@k": 0.9333333333333333,
+      "precision@k": 0.1938888888888889,
+      "gold_coverage": 0.9
+    },
+    "tuned + base 6 d1": {
+      "n": 30,
+      "k": 10,
+      "recall@k": 0.95,
+      "precision@k": 0.22794973544973546,
+      "gold_coverage": 0.9333333333333333
+    },
+    "tuned + base 6 d1 both": {
+      "n": 30,
+      "k": 10,
+      "recall@k": 0.9666666666666667,
+      "precision@k": 0.20537037037037037,
+      "gold_coverage": 0.9333333333333333
+    },
+    "tuned + base 5 d1 both": {
+      "n": 30,
+      "k": 10,
+      "recall@k": 0.9666666666666667,
+      "precision@k": 0.20074074074074075,
+      "gold_coverage": 0.9333333333333333
+    }
+  }
+}
